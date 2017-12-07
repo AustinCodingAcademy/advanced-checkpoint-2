@@ -1,33 +1,32 @@
-// Create a function component that list out a collection of your models (ListOfUsers)
-// * Use prop types to define what props the component needs
-// * It should probably need a prop named after the plural of your model, and it should probably be an array
-// * Probably want to map over this array and create some divs or li’s showing 3 of the properties of the item
-// * Create a Link on each item so you can navigate to the detail page
-// * Create a button on each item so you can delete the item
-
 import React from "react";
 import array from "../albums";
+import PropTypes from "prop-types";
+import Link from "react-router-dom";
 
 class ListAlbums extends React.Component {
-
-  render() {
-    let albums = array.map((album) => {
+    render() {
+        let renderAlbums = array.map(album => {
+            return (
+                <div key={album.id} className="List-Albums">
+                    <div>ALBUM: {album.title}</div>
+                    <div>ARTIST: {album.artist}</div>
+                    <div>RELEASE DATE: {album.release}</div>
+                    {/* <Link to={"/" + this.props.path + "/" + d._id}>Details</Link> */}
+                    <button type="button">Delete</button>
+                </div>
+            );
+        });
         return (
-            <div key={album.id} className="List-Albums">
-                <div>ALBUM: {album.title}</div>
-                <div>ARTIST: {album.artist}</div>
-                <div>RELEASE DATE: {album.release}</div>
+            <div>
+                <h1>List of Albums</h1>
+                {renderAlbums}
             </div>
-        )
-    });
-    
-   
-    return (
-        <div>
-          {albums}  
-        </div>
-    );
-  }
-}
+        );
+    };
+};
+
+ListAlbums.propTypes = {
+  albums: PropTypes.array
+};
 
 export default ListAlbums;
