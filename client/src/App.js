@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
+import ListAlbums from "./components/ListAlbums"
 
 class App extends Component {
-  constructor() {
-    super();
-  }
+  
   componentDidMount() {
   }
   render() {
     return (
       <div>
-        Client
+        <ListAlbums />
+   
       </div>
     );
   }
