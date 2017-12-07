@@ -11,7 +11,10 @@ class ListAlbums extends React.Component {
                     <div>ALBUM: {album.title}</div>
                     <div>ARTIST: {album.artist}</div>
                     <div>RELEASE DATE: {album.release}</div>
-                    {/* <Link to={"/" + this.props.path + "/" + d._id}>Details</Link> */}
+                    <button>
+                        {/* this is where to put the link */}
+                        Details
+                    </button>
                     <button type="button">Delete</button>
                 </div>
             );

@@ -16,5 +16,11 @@ export default [
         title: "Favourite Worst Nightmare",
         artist: "Arctic Monkeys",
         release: 2007
-    }
+    },
+    {
+        id: 4,
+        title: "In Rainbows",
+        artist: "Radiohead",
+        release: 2007
+    },
 ];
