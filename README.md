@@ -52,7 +52,7 @@
     * Create an action for deleting an item
         * deleteThing(id) - do a fetch delete to “/things/” + id
         * when the fetch is complete, dispatch to loadThings
-    * Create reducer for the state
+    ***** Create reducer for the state ******
         * care about the action THINGS_LOADED
     * Create containers for all of you components
         * mapStateToProps and mapDispatchToProps

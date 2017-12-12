@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import ListAlbums from "./components/ListAlbums";
-import CreateAlbum from "./components/CreateAlbum";
 import AlbumDetail from "./components/AlbumDetail";
+import Main from "./components/Main"
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+
 
 class App extends Component {
   
@@ -10,12 +11,14 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">
-        <CreateAlbum />
-        <ListAlbums />
-        <AlbumDetail />
-      
-      </div>
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route path={'/albumdetail/:id'} component={AlbumDetail}/>
+            <Route path={'/'} component={Main}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

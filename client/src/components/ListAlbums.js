@@ -1,7 +1,7 @@
 import React from "react";
 import array from "../albums";
 import PropTypes from "prop-types";
-import Link from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class ListAlbums extends React.Component {
     render() {
@@ -12,8 +12,7 @@ class ListAlbums extends React.Component {
                     <div>ARTIST: {album.artist}</div>
                     <div>RELEASE DATE: {album.release}</div>
                     <button>
-                        {/* this is where to put the link */}
-                        Details
+                        <Link to={"/albumdetail/"+ album.id}>Details</Link>
                     </button>
                     <button type="button">Delete</button>
                 </div>

@@ -1,11 +1,12 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
+function albums(state = [], action) { 
+  if (action.type === "ALBUMS_LOADED"){
+    return action.value;
+  }
   return state;
 }
 
 
-const rootReducer = combineReducers({
-  someThing
-});
+const rootReducer = combineReducers({albums});
 export default rootReducer;
