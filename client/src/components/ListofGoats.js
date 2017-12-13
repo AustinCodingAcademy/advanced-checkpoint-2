@@ -6,10 +6,10 @@ function ListofGoats(props) {
   let goatDivs = props.goats.map((g, i) => {
     return (
       <div key={i}>
-        {/* {g[props.field]}
+        {g[props.field]}
         {g[props.field1]}
         {g[props.field2]}
-        <Link to={"/" + props.path + "/" + g._id}>View</Link> */}
+        <Link to={"/" + props.path + "/" + g._id}>View</Link>
         <button>Delete</button>
       </div>
     );

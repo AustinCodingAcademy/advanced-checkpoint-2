@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import ListofGoats from "./components/ListofGoats";
-import CreateGoat from "./components/CreateGoat";
 import CreateGoatContainer from "./containers/CreateGoatContainer";
 import ListofGoatsContainer from "./containers/ListofGoatsContainer";
 import GoatDetail from "./components/GoatDetail";
@@ -17,7 +15,7 @@ class App extends Component {
     super();
   }
   componentDidMount() {
-    // this.props.loadGoats();
+    this.props.loadGoats();
   }
   render() {
     return (

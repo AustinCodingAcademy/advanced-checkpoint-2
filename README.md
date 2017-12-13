@@ -69,12 +69,12 @@
 
 ## Server - use advanced-express-practice as an example
 * The code for this goes in the /server folder
-* Use express to create a server listening on port 3001
-* Use mongoose to connect to a MongoDB database called “checkpoint2”
-* Create a Model for your thing
-* Create a Route and Controller for your thing
+* Use express to create a server listening on port 3001 (/)
+* Use mongoose to connect to a MongoDB database called “checkpoint2” (/)
+* Create a Model for your thing (/)
+* Create a Route and Controller for your thing (/)
 * In the Route, create routes for getting all things, getting one thing by id, deleting one thing, updating one thing, and creating one thing
-* In the Controller, create functions for list,show,create,update,remove
+* In the Controller, create functions for list,show,create,update,remove (/)
 
 ## Points
 * When I yarn start, the web page loads with no errors - 10pts
