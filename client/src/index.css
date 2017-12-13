@@ -1,5 +1,10 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 1em;
+  padding: 1em;
   font-family: sans-serif;
+}
+
+div {
+  border: 1px solid purple;
+  padding: .2em;
 }
