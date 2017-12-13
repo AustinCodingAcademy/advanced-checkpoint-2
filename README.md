@@ -47,19 +47,19 @@
 
 ### Redux
 
-    * The only state you need is an array of your models
-        * state.js
+    * The only state you need is an array of your models (/)
+        * state.js (/)
     * Create actions for loading your models and models loaded
-        * loadThings() - do a fetch get to “/things”
+        * loadThings() - do a fetch get to “/things” (/)
         * thingsLoaded(things) - THINGS_LOADED
     * Create an action for saving a new model
-        * createThing(thing) - do a fetch post to “/things”
-        * when the fetch is complete, dispatch to loadThings
+        * createThing(thing) - do a fetch post to “/things” (/)
+        * when the fetch is complete, dispatch to loadThings (/)
     * Create an action for deleting an item
         * deleteThing(id) - do a fetch delete to “/things/” + id
         * when the fetch is complete, dispatch to loadThings
     * Create reducer for the state
-        * care about the action THINGS_LOADED
+        * care about the action THINGS_LOADED (/)
     * Create containers for all of you components
         * mapStateToProps and mapDispatchToProps
         * The list component container should mapStateToProps for the array of things

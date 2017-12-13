@@ -23,6 +23,7 @@ class App extends Component {
         <div>
           <nav>
             <ul>
+              <li><Link to={"/"}>Home</Link></li>
               <li><Link to={"/goats"}>View all Goats</Link></li>
               <li><Link to={"/creategoat"}>Make a new Goat</Link></li>
             </ul>
