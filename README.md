@@ -61,10 +61,10 @@
     * Create reducer for the state
         * care about the action THINGS_LOADED (/)
     * Create containers for all of you components
-        * mapStateToProps and mapDispatchToProps
-        * The list component container should mapStateToProps for the array of things
-        * The list component container should mapDispatchToProps for the deleteThing action
-        * The new thing component container should mapDispatchToProps for the saveThingAction
+        * mapStateToProps and mapDispatchToProps (/)
+        * The list component container should mapStateToProps for the array of things (/)
+        * The list component container should mapDispatchToProps for the deleteThing action (/)
+        * The new thing component container should mapDispatchToProps for the saveThingAction (/)
         * AppContainer should mapDispatchToProps for loadThings.
 
 ## Server - use advanced-express-practice as an example

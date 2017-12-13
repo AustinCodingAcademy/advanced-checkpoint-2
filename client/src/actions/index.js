@@ -1,7 +1,7 @@
 export function loadGoats() {
   return function (dispatch) {
     fetch("/goats").then((res) => {
-      return response.json();
+      return res.json();
     }).then((goats) => {
       dispatch(goatsLoaded(goats));
     });
@@ -21,6 +21,15 @@ export function createGoat(g) {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(g)
+    }).then(() => dispatch(loadGoats()));
+  };
+}
+
+export function deleteGoat(id) {
+  return function (dispatch) {
+    fetch("/goats/" + id, {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"}
     }).then(() => dispatch(loadGoats()));
   };
 }

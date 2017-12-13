@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import ListofGoats from "./components/ListofGoats";
 import CreateGoat from "./components/CreateGoat";
+import CreateGoatContainer from "./containers/CreateGoatContainer";
+import ListofGoatsContainer from "./containers/ListofGoatsContainer";
 import GoatDetail from "./components/GoatDetail";
 import {Link} from "react-router-dom";
 import {
@@ -30,8 +32,8 @@ class App extends Component {
           </nav>
           <Switch>
             <Route path="/goat/:id" component={GoatDetail} />
-            <Route path="/goats" component={ListofGoats} />
-            <Route path="/creategoat" component={CreateGoat} />
+            <Route path="/goats" component={ListofGoatsContainer} />
+            <Route path="/creategoat" component={CreateGoatContainer} />
           </Switch>
           {/* <div>
             <h2>testing</h2>

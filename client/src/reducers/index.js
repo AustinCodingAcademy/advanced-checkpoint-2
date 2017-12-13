@@ -1,9 +1,5 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") {
-  return state;
-}
-
 function goats(state = [], action) {
   if (action.type === "GOATS_LOADED") {
     return action.value;
@@ -12,6 +8,6 @@ function goats(state = [], action) {
 }
 
 const rootReducer = combineReducers({
-  someThing
+  goats
 });
 export default rootReducer;
