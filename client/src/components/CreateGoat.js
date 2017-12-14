@@ -18,7 +18,7 @@ class CreateGoat extends React.Component {
   render() {
     return (
       <div>
-        <h3>New Goat</h3>
+        <h2>Make a New Goat</h2>
         <form onSubmit={(e) => {
           e.preventDefault();
           if (this.props.createGoat) {
@@ -73,7 +73,7 @@ class CreateGoat extends React.Component {
               <option value="no">No</option>
             </select>
           </div>
-          <button>Create Goat!</button>
+          <button type="submit">Create Goat!</button>
         </form>
       </div>
     )

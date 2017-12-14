@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CreateGoat from "../components/CreateGoat";
-import createGoat from "../actions";
+import { createGoat } from "../actions";
 
 function mapDispatchToProps(dispatch) {
   return {

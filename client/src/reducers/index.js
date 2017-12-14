@@ -7,7 +7,14 @@ function goats(state = [], action) {
   return state
 }
 
+function goat(state = {}, action) {
+  if (action.type === "GET_GOAT_DONE") {
+    return action.value;
+  }
+  return state;
+}
+
 const rootReducer = combineReducers({
-  goats
+  goats, goat
 });
 export default rootReducer;

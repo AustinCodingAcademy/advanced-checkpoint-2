@@ -25,11 +25,39 @@ export function createGoat(g) {
   };
 }
 
+export function getGoat(id) {
+  return function (dispatch) {
+    fetch("/goats/" + id)
+    .then( (response) => {
+      return response.json();
+    }).then((goat) => {
+      dispatch(getGoatDone(goat));
+    });
+  };
+}
+
+function getGoatDone(goat) {
+  return {
+    type: "GET_GOAT_DONE",
+    value: goat
+  };
+}
+
 export function deleteGoat(id) {
   return function (dispatch) {
     fetch("/goats/" + id, {
       method: "DELETE",
       headers: {"Content-Type": "application/json"}
-    }).then(() => dispatch(loadGoats()));
+    }).then(() => {
+      dispatch(goatDeleted());
+      dispatch(loadGoats());
+    });
+  };
+}
+
+function goatDeleted(goat) {
+  return {
+    type: "GOAT_DELETED",
+    value: goat
   };
 }

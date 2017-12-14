@@ -26,7 +26,7 @@ export function create(request, response) {
 }
 
 export function remove(request, response) {
-  Goat.findByIdAndRemove(request.params.id).exec().then(goat => {
-    return response.json(goat);
+  Goat.findByIdAndRemove(request.params.id).exec().then(goats => {
+    return response.json(goats);
   });
 }

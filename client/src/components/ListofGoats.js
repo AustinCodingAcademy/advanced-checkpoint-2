@@ -6,17 +6,23 @@ function ListofGoats(props) {
   let goatDivs = props.goats.map((g, i) => {
     return (
       <div key={i}>
-        {g[props.field]}
-        {g[props.field1]}
-        {g[props.field2]}
-        <Link to={"/" + props.path + "/" + g._id}>View</Link>
-        <button>Delete</button>
+        <h2>Goat: {g._id}</h2>
+        <ul>
+          <li>Eye shape: {g.eye}</li>
+          <li>Goat color: {g.color}</li>
+          <li>Age: {g.age}</li>
+        </ul>
+        <Link to={"/goats/" + g._id}>View</Link>
+        <button onClick={() => props.deleteGoat(g._id)}>Delete</button>
       </div>
     );
   });
 
   return (
-    <div>{goatDivs}</div>
+    <div>
+      <h1>A List of All Goats</h1>
+      {goatDivs}
+    </div>
   );
 }
 

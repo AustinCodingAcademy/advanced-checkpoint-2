@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ListofGoats from "../components/ListofGoats";
-import deleteGoat from "../actions";
+import {deleteGoat} from "../actions";
 
 function mapStateToProps(state) {
   return {

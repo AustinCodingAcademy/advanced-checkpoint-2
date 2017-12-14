@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import CreateGoatContainer from "./containers/CreateGoatContainer";
 import ListofGoatsContainer from "./containers/ListofGoatsContainer";
-import GoatDetail from "./components/GoatDetail";
+import GoatDetailContainer from "./containers/GoatDetailContainer";
 import {Link} from "react-router-dom";
 import {
  BrowserRouter,
@@ -29,15 +29,10 @@ class App extends Component {
             </ul>
           </nav>
           <Switch>
-            <Route path="/goat/:id" component={GoatDetail} />
+            <Route path="/goats/:id" component={GoatDetailContainer} />
             <Route path="/goats" component={ListofGoatsContainer} />
             <Route path="/creategoat" component={CreateGoatContainer} />
           </Switch>
-          {/* <div>
-            <h2>testing</h2>
-            <CreateGoat />
-            <ListofGoats goats={['one']} />
-          </div> */}
         </div>
       </BrowserRouter>
     );
