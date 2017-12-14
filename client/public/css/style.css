@@ -1,0 +1,12 @@
+body {
+  background-image: url('https://hdwallsource.com/img/2014/12/video-game-wallpapers-8223-8556-hd-wallpapers.jpg');
+
+  background-size: cover;
+  color: white;
+}
+
+.dashBtn {
+  display: inline;
+  float: left;
+  margin: 500px 10px 0 0;
+}

@@ -1,0 +1,25 @@
+import mongoose from "mongoose";
+
+const schema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  genre: {
+    type: String,
+    required: true
+  },
+  year: {
+    type: String,
+    required: true
+  },
+  console: {
+    type: String,
+    required: true
+  },
+  image: {
+    type: String,
+    required: true
+  }
+});
+export default mongoose.model("Game", schema);
