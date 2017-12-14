@@ -1,13 +1,13 @@
-import CreateAlbum from "./CreateAlbum";
-import ListAlbums from "./ListAlbums";
+import CreateAlbumContainer from "../containers/CreateAlbumContainer";
+import ListAlbumsContainer from "../containers/ListAlbumsContainer";
 import React from "react";
 
 function Main() {
 
     return (
         <div  className="container">
-            <CreateAlbum />
-            <ListAlbums />
+            <CreateAlbumContainer />
+            <ListAlbumsContainer />
         </div>
     )
 }

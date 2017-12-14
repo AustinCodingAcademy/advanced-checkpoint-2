@@ -7,22 +7,16 @@ export function loadAlbums(){
     }
 };
 
-export function albumsLoaded(albums){
-    return {
-        type: "ALBUMS_LOADED",
-        value: albums
-    };
-}
 
-export function createAlbum(album){
+export function createAlbum(album) {
     return function(dispatch){
-        fetch("/albums", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(album)
-        }).then(() => dispatch(loadAlbums()));
+      fetch("/albums", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(album)
+      }).then(() => dispatch(loadAlbums()));
     };
-}
+  }
 
 export function deleteAlbum(id){
     return function(dispatch){
@@ -32,3 +26,10 @@ export function deleteAlbum(id){
         .then(() => dispatch(loadAlbums()))
     }
 };
+
+export function albumsLoaded(albums){
+    return {
+        type: "ALBUMS_LOADED",
+        value: albums
+    };
+}

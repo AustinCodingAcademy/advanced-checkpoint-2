@@ -1,10 +1,13 @@
 import React from "react";
-import array from "../albums";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 
 class ListAlbums extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render() {
+        const array = this.props.albums;
         let renderAlbums = array.map(album => {
             return (
                 <div key={album.id} className="List-Albums">
