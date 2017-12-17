@@ -8,7 +8,7 @@ class AlbumDetail extends React.Component {
         console.log("album Detail props: ", this.props.albums)
         const array = this.props.albums;
         const albumId = this.props.match.params.id
-        const foundAlbum = array.find((album) => {if (album.id == albumId){return album}});
+        const foundAlbum = array.find((album) => {if (album._id == albumId){return album}});
         console.log(foundAlbum);
         return (
             <div>

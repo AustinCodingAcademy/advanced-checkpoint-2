@@ -20,11 +20,10 @@ class CreateAlbum extends React.Component {
             <div>
                 <h1>Create Album</h1>
                 <form onSubmit={(e) => {
-                    e.preventDefault()
-                    if(this.props.createAlbum){
-                        this.props.createAlbum(this.state.album)
-                    }
-                    console.log(this.state.album)
+                    e.preventDefault();
+                    console.log(this.props)
+                    this.props.createAlbum(this.state.album);
+                  
                 }}>
                     <div>
                         TITLE: <input onChange={(e) => {
@@ -32,6 +31,7 @@ class CreateAlbum extends React.Component {
                             this.setState({
                                 album: Object.assign(this.state.album,title)
                             });
+                            console.log(this.state)
                         }} />
                     </div>
                     <div>
@@ -40,6 +40,7 @@ class CreateAlbum extends React.Component {
                             this.setState({
                                 album: Object.assign(this.state.album,artist)
                             });
+                            console.log(this.state)
                         }} />
                     </div>
                     <div>
@@ -56,6 +57,7 @@ class CreateAlbum extends React.Component {
                             this.setState({
                                 album: Object.assign(this.state.album,price)
                             });
+                            console.log(this.state)
                         }} />
                     </div>
                     <button>Create</button>

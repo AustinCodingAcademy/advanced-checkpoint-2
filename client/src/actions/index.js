@@ -9,18 +9,21 @@ export function loadAlbums(){
 
 
 export function createAlbum(album) {
+    console.log("create album was called")
+    console.log("this is the object I'm sending: ", album)
+    console.log("json stringify output: ", JSON.stringify(album))
     return function(dispatch){
-      fetch("/albums", {
+      fetch("/albums/", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(album)
-      }).then(() => dispatch(loadAlbums()));
+      }).then(() => dispatch(loadAlbums()))
     };
   }
 
 export function deleteAlbum(id){
     return function(dispatch){
-        fetch("/albums" + id, {
+        fetch("/albums/" + id, {
             method: "DELETE"
         })
         .then(() => dispatch(loadAlbums()))
