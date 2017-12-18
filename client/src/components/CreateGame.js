@@ -22,26 +22,34 @@ class CreateGame extends Component {
           }
         }}>
           <div>
+          <div>
               Name: <input onChange={(e) => {
                 this.setState({
                   name: e.target.value
               });
             }} />
+            </div>
+            <div>
               Players: <input onChange={(e) => {
                 this.setState({
                   players: e.target.value
               });
             }} />
+            </div>
+            <div>
               Type: <input onChange={(e) => {
                 this.setState({
                   type: e.target.value
               });
             }} />
+            </div>
+            <div>
               Playtime: <input onChange={(e) => {
                 this.setState({
                   playtime: e.target.value
               });
           }} />
+          </div>
           </div>
           <button>Create</button>
         </form>
