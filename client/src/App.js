@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import ListOfUsersContainer from "./containers/ListOfUsersContainer";
+import CreateUserContainer from "./containers/CreateUserContainer";
 
 class App extends Component {
   constructor() {
@@ -10,11 +12,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        Client
+        <ListOfUsersContainer />
+        <CreateUserContainer />
       </div>
     );
   }
 }
-export default (App);
-
-
+export default App;
