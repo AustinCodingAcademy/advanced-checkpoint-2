@@ -6,10 +6,10 @@
 * Implement 5 properties for this model. 
 * Make sure if you are on a windows machine you remove the single quotes from package.json
 
-## Client
+## Client --
 * Client code goes in client/src
 
-### React
+### React --
 * Create a function component that list out a collection of your models (ListOfUsers)
     * Use prop types to define what props the component needs
     * It should probably need a prop named after the plural of your model, and it should probably be an array
@@ -39,7 +39,7 @@
 * Make sure to wrap all routes in Switch
 * Create links to the list and create routes, put them anywhere in App.js outside of the Switch. 
 
-### Redux
+### Redux --
 
     * The only state you need is an array of your models
         * state.js
@@ -61,7 +61,7 @@
         * The new thing component container should mapDispatchToProps for the saveThingAction
         * AppContainer should mapDispatchToProps for loadThings.
 
-## Server - use advanced-express-practice as an example
+## Server - use advanced-express-practice as an example --
 * The code for this goes in the /server folder
 * Use express to create a server listening on port 3001
 * Use mongoose to connect to a MongoDB database called “checkpoint2”
