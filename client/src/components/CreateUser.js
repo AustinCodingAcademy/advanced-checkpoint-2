@@ -37,7 +37,7 @@ class CreateUser extends Component {
               });
             }} />
           </div>
-        <button> Create User</button>
+        <button>Create User</button>
         </form>
       </div>
     );

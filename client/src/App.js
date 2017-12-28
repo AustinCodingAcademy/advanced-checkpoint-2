@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import ListOfUsersContainer from "./containers/ListOfUsersContainer";
 import CreateUserContainer from "./containers/CreateUserContainer";
+import UserDetailContainer from "./containers/UserDetailContainer";
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class App extends Component {
       <div>
         <ListOfUsersContainer />
         <CreateUserContainer />
+        <UserDetailContainer />
       </div>
     );
   }

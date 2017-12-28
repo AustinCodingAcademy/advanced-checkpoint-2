@@ -1,15 +1,18 @@
 import { connect } from "react-redux";
 import ListOfUsers from "./../components/ListOfUsers.js";
+import { deleteUser } from "../actions";
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    users: state.users
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-
+    deleteUser: function(id) {
+      dispatch(deleteUser(id));
+    }
   };
 }
 

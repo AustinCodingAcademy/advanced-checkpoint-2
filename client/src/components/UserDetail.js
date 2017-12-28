@@ -1,17 +1,18 @@
 import React from "react";
 
 function UserDetail(props){
-  /*const props = {dog:[{
+  /*const props = {user:[{
   name: "Buster",
   age: 3,
-  breed: "doggie"
+  breed: "usergie"
 }]}*/
-  const dogDivs = props.dog.map(function(dog)){
-    return <div>{dog.name} - {dog.age} - {dog.breed}</div>;
+  const userDivs = props.users.map(function(user){
+    return
+    <div>{user.name} - {user.age} - {user.gender}</div>;
   });
   return (
   <div>
-    {dogDivs}
+    {userDivs}
   </div>);
 }
 export default UserDetail;

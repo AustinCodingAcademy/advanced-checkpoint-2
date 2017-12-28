@@ -9,9 +9,17 @@ import UserModel from "../models/UserModel";
 
 export function list(request, response) {
   UserModel.find({}).exec()
-  .then(users => {
+  .then(user => {
     return response.json(users);
   });
+}
+
+export function show(request, response)
+{
+   UserModel.findById(request.params.id).exec()
+   .then(user => {
+     return response.json(user);
+   });
 }
 
 export function create(request, response) {
