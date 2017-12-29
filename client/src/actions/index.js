@@ -28,7 +28,7 @@ export function addCar(c) {
 
 export function getCar(id) {
     return function (dispatch) {
-        fetch("/cars" + id)
+        fetch("/cars/" + id)
         .then((response) => {
             return response.json();
         }).then((car) => {
@@ -46,7 +46,7 @@ function getCarDone(car) {
 
 export function deleteCar(id) {
     return function (dispatch) {
-        fetch("/cars" + id, {
+        fetch("/cars/" + id, {
             method: "DELETE",
             headers: {"Content-Type": "application/json"}
         }).then(() => {

@@ -9,8 +9,8 @@ export function list(request, response) {
 
 export function show(request, response) {
     Car.findById(request.params.id).exec()
-    .then(cars => {
-        return response.json(cars);
+    .then(car => {
+        return response.json(car);
     });
 }
 

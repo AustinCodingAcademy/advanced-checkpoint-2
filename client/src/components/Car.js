@@ -4,8 +4,8 @@ class Car extends Component {
 
     componentDidMount() {
 
-        let carId = this.props.match.params.id;
-        this.props.getCar(carId);
+         
+        this.props.getCar(this.props.match.params.id);
     }
     render() {
 

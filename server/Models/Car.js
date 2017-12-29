@@ -23,4 +23,4 @@ const schema = new mongoose.Schema({
     },
 });
 
-export default mongoose.model("Cars", schema);
+export default mongoose.model("Car", schema);
