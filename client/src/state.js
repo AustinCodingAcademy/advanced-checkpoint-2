@@ -3,27 +3,37 @@ export default {
 {
   name: "Bouglas",
   age: 5,
-  gender: "female"
+  gender: "female",
+  birthday: "",
+  nationality:""
 },
 {
   name: "Dug",
   age: 4,
-  gender: "male"
+  gender: "male",
+  birthday: "",
+  nationality:""
 },
 {
   name: "Las",
   age: 3,
-  gender: "female"
+  gender: "female",
+  birthday: "",
+  nationality:""
 },
 {
   name: "Yes",
   age: 2,
-  gender: "male"
+  gender: "male",
+  birthday: "",
+  nationality:""
 },
 {
   name: "Hola",
   age: 1,
-  gender: "female"
+  gender: "female",
+  birthday: "",
+  nationality:""
 },
 ]
 };

@@ -8,7 +8,13 @@ function UserDetail(props){
 }]}*/
   const userDivs = props.users.map(function(user){
     return
-    <div>{user.name} - {user.age} - {user.gender}</div>;
+    <div><ul>
+      <ol>{this.props.user.name}</ol>
+      <ol>{this.props.user.age}</ol>
+      <ol>{this.props.user.gender}</ol>
+      <ol>{this.props.user.birthday}</ol>
+      <ol>{this.props.user.nationality}</ol>
+    </ul></div>;
   });
   return (
   <div>

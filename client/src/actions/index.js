@@ -2,6 +2,12 @@ export function loadUsers() {
   return function (dispatch) {
     fetch("/users")
     .then( (response) => {
+      if(response.status === 200){
+        return response.json();
+      }
+      else{
+        return response;
+      }
       return response.json();
     }).then((users) => {
       dispatch(usersLoaded(users));
@@ -15,14 +21,20 @@ function usersLoaded(users) {
   };
 }
 
-export function createUser() {
+export function createUser(state) {
+  fetch("/users", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(state)
+  });
+  /*
   return function (dispatch) {
     fetch("/users", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify()
+      body: JSON.stringify(state)
     }).then(() => dispatch(loadUsers()));
-  };
+  };*/
 }
 
 export function getUser(id) {

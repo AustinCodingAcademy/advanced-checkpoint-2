@@ -13,6 +13,14 @@ const schema = new mongoose.Schema({
    required: false,
    type: String
  },
+ birthday: {
+   required: false,
+   type: String
+ },
+ nationality: {
+   required: false,
+   type: String
+ },
 });
 
 const UserModel = mongoose.model("User", schema);

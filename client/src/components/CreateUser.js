@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { createUser } from "../actions";
 
 class CreateUser extends Component {
   constructor() {
@@ -6,9 +7,12 @@ class CreateUser extends Component {
     this.state = {
       name:"",
       age:0,
-      gender:""
+      gender:"",
+      birthday:"",
+      nationality:""
     }
   }
+
   componentDidMount() {
   }
   render() {
@@ -16,9 +20,8 @@ class CreateUser extends Component {
       <div>
         <form onSubmit={(e) => {
             e.preventDefault();
-            if(this.props.saveUser) {
-              this.props.saveUser(this.state);
-            }
+            console.log(this.props);
+            createUser(this.state);
           }}>
           <div>
           Name: <input onChange={(e) => {
@@ -36,11 +39,21 @@ class CreateUser extends Component {
                 gender: e.target.value
               });
             }} />
+          Birthday: <input onChange={(e) => {
+              this.setState({
+                birthday: e.target.value
+              });
+            }} />
+          Nationality: <input onChange={(e) => {
+              this.setState({
+              nationality: e.target.value
+              });
+            }} />
           </div>
-        <button>Create User</button>
+        <button type="submit" >Create User</button>
         </form>
       </div>
     );
   }
 }
-export default (CreateUser);
+export default CreateUser;

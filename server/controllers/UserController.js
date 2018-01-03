@@ -10,7 +10,7 @@ import UserModel from "../models/UserModel";
 export function list(request, response) {
   UserModel.find({}).exec()
   .then(user => {
-    return response.json(users);
+    return response.json(user);
   });
 }
 
@@ -27,6 +27,8 @@ export function create(request, response) {
      name: request.body.name,
      age: request.body.age,
      gender: request.body.gender,
+     birthday: request.body.birthday,
+     nationality: request.body.nationality
    });
    contact.save()
    .then(user => {
