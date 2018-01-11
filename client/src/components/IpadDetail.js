@@ -22,9 +22,6 @@ class IpadDetail extends Component {
             this.props.deleteIpad(id);
           }} >DELETE</button>
         </Link>
-        <Link to={`/updateipad/${id}`}>
-          <button>EDIT</button>
-        </Link>
       </div>
     );
   }
