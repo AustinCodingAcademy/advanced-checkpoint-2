@@ -21,8 +21,8 @@ class CreateAlbum extends React.Component {
                 <h1>Create Album</h1>
                 <form onSubmit={(e) => {
                     e.preventDefault();
-                    console.log(this.props)
                     this.props.createAlbum(this.state.album);
+                    console.log(this.state.album)
                   
                 }}>
                     <div>

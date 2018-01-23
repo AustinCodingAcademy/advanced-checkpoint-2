@@ -8,6 +8,7 @@ class ListAlbums extends React.Component {
     }
   
     render() {
+        console.log("HELL YEAH")
         const array = this.props.albums;
         let renderAlbums = array.map(album => {
             return (

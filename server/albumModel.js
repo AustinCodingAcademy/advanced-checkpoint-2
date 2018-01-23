@@ -16,7 +16,7 @@ const schema = new mongoose.Schema({
  price: {
      required: false,
      type: String
- }
+ },
 });
 
 export default mongoose.model("album", schema);

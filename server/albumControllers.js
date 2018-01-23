@@ -17,7 +17,6 @@ export function show(request, response) {
 }
 
 export function create(request, response) {
-  console.log(request.body)
   const album = new albumModel(request.body)
   album.save()
   .then(album => {
