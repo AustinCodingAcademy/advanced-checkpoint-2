@@ -1,23 +1,23 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-  name: {
+  firstname: {
    required: true,
    type: String
  },
- dob: {
+ lastname: {
    required: true,
-   type: Date
+   type: String
  },
  experience: {
    required: true,
    type: Number
  },
- university: {
+ skills: {
      required: true,
      type: String
  } ,
- location: {
+ linkedin: {
      required: true,
      type: String
  }

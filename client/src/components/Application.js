@@ -8,11 +8,10 @@ class Application extends Component {
     render () {
         return (
             <div>
-                <div>Name: {this.props.application.name}</div>
-                <div>DOB: {this.props.application.dob}</div>
-                <div>Experience: {this.props.application.experience}</div>
-                <div>University: {this.props.application.university}</div>
-                <div>Location: {this.props.application.location}</div>
+                <div style={{textAlign: 'center'}}>Name: {this.props.application.firstname} {this.props.application.lastname}</div>
+                <div style={{textAlign: 'center'}}>Experience: {this.props.application.experience}</div>
+                <div style={{textAlign: 'center'}}>Top Skills: {this.props.application.skills}</div>
+                <div style={{textAlign: 'center'}}>Linkedin Profile: {this.props.application.linkedin}</div>
             </div>
         );
     }

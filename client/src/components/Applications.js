@@ -1,30 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Table from "../components/Table";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-function Appliations(props) {
+function Applications (props) {
 
-      let userDivs = props.applications.map((d,i) => {
-        return (
-          <div key={i}>
-            {d.name}&nbsp;
-            {d.dob}&nbsp;
-            {d.experience}&nbsp; 
-            {d.university}&nbsp; 
-            {d.location}&nbsp;
-            <Link to={"/application/" + d._id}> View </Link>&nbsp;
-            <button
-              onClick={ () => props.removeApplication(d._id) } 
-            > Delete </button>
-          </div>
-        );
-      });
-
-    return (
-      <div>
-        <h2>Appliations</h2>
-        {userDivs}
-      </div>
+  return (
+    <div>
+      <h2>All Applications</h2>
+      <MuiThemeProvider>
+        <Table 
+          delete={props.removeApplication}
+          data={props.applications} 
+          header={[
+            {
+              name: "Full Name",
+              prop: 'name'
+            },    
+            {
+              name: "Experience",
+              prop: 'experience'
+            },        
+            {
+              name: "Top Skills",
+              prop: 'university'
+            },        
+            {
+              name: "View Detials",
+              prop: 'details'
+            },
+            {
+              name: "Delete?",
+              prop: 'delete'
+            }
+          ]}/>
+      </MuiThemeProvider>
+    </div>
     );
   }
 
-export default Appliations;
+export default Applications;

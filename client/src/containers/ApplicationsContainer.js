@@ -4,7 +4,7 @@ import { removeApplication } from "../actions";
 
 function mapStateToProps(state) {
   return {
-    applications: state.applications
+    applications: state.applications,
   };
 }
 

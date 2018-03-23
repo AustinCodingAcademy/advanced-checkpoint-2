@@ -1,70 +1,86 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 class CreateThings extends React.Component {
   constructor() {
     super();
     this.state = {
+      redirectToNewPage: false,
       application: {
-        name: "",
-        dob: "",
+        firstname: "",
+        lastname: "",
         experience: "",
-        university: "",
-        location: ""
+        skills: "",
+        linkedin: ""
       }
     };
+
   }
+      
+  handleClick = () => {
+    this.setState({ redirectToNewPage: true })
+  }
+
   render() {
+
+    if (this.state.redirectToNewPage) {
+      return(
+        <Redirect to="/applications" />
+      )
+    }
+
     return (
       <div>
         <div>
-          <h1>Application</h1>
+          <h1 style={{textAlign: 'center'}}>Fill out Information Below</h1>
           <form onSubmit={(e) => {
             e.preventDefault();
             if (this.props.createApplication) {
               this.props.createApplication(this.state.application);
+              this.handleClick();
             }
           }}>
-            <div>
-              Name: <input onChange={(e) => {
-                const application = {name: e.target.value};
+            <div style={{textAlign: 'center'}}>
+              First Name: <input  onChange={(e) => {
+                const application = {firstname: e.target.value};
                 this.setState({
                     application: Object.assign(this.state.application,application)
                 });
               }} />
             </div>
-            <div>
-              DOB: <input type="Date" onChange={(e) => {
-                const application = {dob: e.target.value};
+            <div style={{textAlign: 'center'}}>
+              Last Name: <input  onChange={(e) => {
+                const application = {lastname: e.target.value};
                 this.setState({
                     application: Object.assign(this.state.application,application)
                 });
               }} />
             </div>
-            <div>
-              Experience: <input onChange={(e) => {
+            <div style={{textAlign: 'center'}}>
+              Years of Experience: <input onChange={(e) => {
                 const application = {experience: e.target.value};
                 this.setState({
                     application: Object.assign(this.state.application,application)
                 });
               }} />
             </div>
-            <div>
-              University: <input onChange={(e) => {
-                const application = {university: e.target.value};
+            <div style={{textAlign: 'center'}}>
+              Top Skills: <input onChange={(e) => {
+                const application = {skills: e.target.value};
                 this.setState({
                     application: Object.assign(this.state.application,application)
                 });
               }} />
             </div>
-            <div>
-              Location: <input onChange={(e) => {
-                const application = {location: e.target.value};
+            <div style={{textAlign: 'center'}}>
+              LinkedIn URL: <input onChange={(e) => {
+                const application = {linkedin: e.target.value};
                 this.setState({
                     application: Object.assign(this.state.application,application)
                 });
               }} />
             </div>
-            <button>Create</button>
+            <button style={{float: 'right'}}>Apply</button>
           </form>
         </div>        
       </div>
