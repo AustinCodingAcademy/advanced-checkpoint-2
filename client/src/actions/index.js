@@ -1,5 +1,6 @@
 export function loadMovieIdeas() {
   return function (dispatch) {
+    console.log("loadMovieIdeas working");
     fetch("/movieIdeas",{
       headers : {
         "Content-Type": "application/json",
@@ -7,10 +8,11 @@ export function loadMovieIdeas() {
        }
     })
     .then( (response) => {
-      console.log("hello loadMovieIdeas");
       return response.json();
     }).then((movieIdeas) => {
-      dispatch(movieIdeasLoaded(movieIdeas));
+      let stuff = movieIdeasLoaded(movieIdeas);
+      console.log("loadMovieIdeas dispatched stuff:",stuff);
+      dispatch(stuff);
     });
   };
 }

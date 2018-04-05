@@ -1,11 +1,23 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-  body: {
+  title: {
     required:true,
     type: String
   },
   genre: {
+    required:true,
+    type: String
+  },
+  logline: {
+    required:true,
+    type: String
+  },
+  budget: {
+    required:true,
+    type: String
+  },
+  notes: {
     required:true,
     type: String
   }

@@ -1,3 +1,4 @@
+
 import movieIdeas from "./movieIdeas";
 import express from "express";
 import bodyParser from "body-parser";
@@ -22,3 +23,34 @@ app.listen(3002, (err) => {
    return console.log("Error", err);
  }
 });
+
+/*
+//server test code
+let mongoose = require("mongoose");
+
+mongoose.set("debug", true);
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://psc478:psc478@ds131329.mlab.com:31329/advanced-checkpoint-2");
+
+const schema = new mongoose.Schema({
+body: {
+required:true,
+type: String
+},
+genre: {
+required:true,
+type: String
+}
+});
+
+const MovieIdeaModel = mongoose.model("MovieIdea", schema);
+
+const movieIdea = new MovieIdeaModel({
+body: "stuff",
+genre:"test"
+});
+movieIdea.save()
+.then(mov => {
+console.log("MovieIdeasController create");
+return response.json(mov);
+});*/

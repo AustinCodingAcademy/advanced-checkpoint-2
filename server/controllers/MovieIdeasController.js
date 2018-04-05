@@ -2,6 +2,7 @@ import MovieIdeaModel from "../models/MovieIdeaModel";
 
 export function list(request, response) {
   console.log("movieIdeasController list");
+  //console.log("movieIdeasController list request",request);
   MovieIdeaModel.find({}).exec()
  .then(movieIdeas => {
    //console.log("movieIdeasController list2");
@@ -12,7 +13,11 @@ export function list(request, response) {
 export function create(request, response) {
   console.log("MovieIdeasController create");
   const movieIdea = new MovieIdeaModel({
-    body: request.body.body
+    title: request.body.title,
+    genre: request.body.genre,
+    logline: request.body.logline,
+    budget: request.body.budget,
+    notes: request.body.notes
   });
   movieIdea.save()
   .then(mov => {
@@ -34,8 +39,11 @@ export function show(request, response) {
 export function update(request, response) {
   MovieIdeaModel.findById(request.params.id).exec()
     .then(movieIdea => {
-      movieIdea.body = request.body.body || movieIdea.body;
+      movieIdea.title = request.body.title || movieIdea.title;
       movieIdea.genre = request.body.genre || movieIdea.genre;
+      movieIdea.logline = request.body.logline || movieIdea.logline;
+      movieIdea.budget = request.body.budget || movieIdea.budget;
+      movieIdea.notes = request.body.notes || movieIdea.notes;
       return user.save();
     })
     .then(movieIdea => {
