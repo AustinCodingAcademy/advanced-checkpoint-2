@@ -6,15 +6,26 @@ class oneMovieIdea extends React.Component {
   }
 
   render() {
-    let mov = "";
-    console.log("oneMovieIdea this.props:",this.props);
+    let title = "";
+    let genre = "";
+    let budget = "";
+    let notes = "";
+    let logline = "";
+    console.log("oneMovieIdea this.props:",this.props.match.params.id);
     if(this.props.movieIdea){
-      mov = this.props.movieIdea.body;
+      title = this.props.movieIdea.title;
+      genre = this.props.movieIdea.genre;
+      budget = this.props.movieIdea.budget;
+      notes = this.props.movieIdea.notes;
+      logline = this.props.movieIdea.logline;
     }
-    console.log("oneMovieIdea this.props.path._id:",this.props.path._id);
     return (
       <div className="oneMovieIdea">
-        <h2>Selected Movie Idea: {mov}</h2>
+        <h2>{title}</h2>
+        <h3>Logline: {logline}</h3>
+        <h4>Genre: {genre}</h4>
+        <h4>Budget: {budget}</h4>
+        <p>{notes}</p>
       </div>
     );
   }

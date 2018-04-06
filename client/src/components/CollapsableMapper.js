@@ -4,17 +4,18 @@ import {Link} from "react-router-dom";
 class CollapsableMapper extends Component {
   constructor() {
     super();
-    this.state = {visible: true};
+    //this.state = {visible: true};
   }
   render() {
-    let buttonText = "Hide";
+    //let buttonText = "Hide";
     let userDivs = "";
-    if (this.state.visible) {
-      buttonText = "Hide";
+    //if (this.state.visible) {
+      //buttonText = "Hide";
       console.log("CollapsableMapper this.props:",this.props);
-      console.log("CollapsableMapper this.props.path:",this.props.path);
+      //console.log("CollapsableMapper this.props.path:",this.props.path);
       console.log("CollapsableMapper this.props.field:",this.props.field);
       console.log("CollapsableMapper this.props.field1:",this.props.field1);
+      console.log("CollapsableMapper this.props.data[0]:",this.props.data[0]);
       userDivs = this.props.data.map((d,i) => {
         return (
           <div key={i}>
@@ -26,20 +27,12 @@ class CollapsableMapper extends Component {
           </div>
         );
       });
-    } else {
-      buttonText = "Show";
-      userDivs = "";
-    }
+    //} else {
+      //buttonText = "Show";
+      //userDivs = "";
+    //}
     return (
       <div>
-        <button onClick={() => {
-          this.setState({
-            visible: !this.state.visible
-          });
-        }
-        }>
-          {buttonText}
-        </button>
         {userDivs}
       </div>);
   }
