@@ -41,7 +41,7 @@ class CreateThings extends React.Component {
             </div>
             <div>
               Logline: <input onChange={(e) => {
-                const movieIdea = {Logline: e.target.value};
+                const movieIdea = {logline: e.target.value};
                 this.setState({
                   movieIdea: Object.assign(this.state.movieIdea,movieIdea)
                 });
@@ -49,7 +49,7 @@ class CreateThings extends React.Component {
             </div>
             <div>
               Budget: <input onChange={(e) => {
-                const movieIdea = {Budget: e.target.value};
+                const movieIdea = {budget: e.target.value};
                 this.setState({
                   movieIdea: Object.assign(this.state.movieIdea,movieIdea)
                 });

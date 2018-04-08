@@ -1,6 +1,6 @@
 export function loadMovieIdeas() {
   return function (dispatch) {
-    console.log("loadMovieIdeas working");
+    //console.log("loadMovieIdeas working");
     fetch("/movieIdeas",{
       headers : {
         "Content-Type": "application/json",
@@ -11,7 +11,7 @@ export function loadMovieIdeas() {
       return response.json();
     }).then((movieIdeas) => {
       let stuff = movieIdeasLoaded(movieIdeas);
-      console.log("loadMovieIdeas dispatched stuff:",stuff);
+      //console.log("loadMovieIdeas dispatched stuff:",stuff);
       dispatch(stuff);
     });
   };
@@ -25,6 +25,7 @@ function movieIdeasLoaded(movieIdeas) {
 }
 
 export function createMovieIdea(v) {
+  console.log("createMovieIdea starting");
   return function (dispatch) {
     fetch("/movieIdeas", {
       method: "POST",
@@ -33,7 +34,26 @@ export function createMovieIdea(v) {
         "Accept": "application/json"
        },
       body: JSON.stringify(v)
-    }).then(() => dispatch(loadMovieIdeas()));
+    }).then(() => {
+      console.log("createMovieIdea dispatching");
+      dispatch(loadMovieIdeas());
+    });
+  };
+}
+
+export function deleteMovieIdea(id) {
+  console.log("deleteMovieIdea starting");
+  return function (dispatch) {
+    fetch("/movieIdeas/"+id, {
+      method: "DELETE",
+      headers : {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+       }
+    }).then(() => {
+      console.log("deleteMovieIdea dispatching");
+      dispatch(loadMovieIdeas());
+    });
   };
 }
 

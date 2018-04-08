@@ -6,19 +6,15 @@ const schema = new mongoose.Schema({
     type: String
   },
   genre: {
-    required:true,
     type: String
   },
   logline: {
-    required:true,
     type: String
   },
   budget: {
-    required:true,
     type: String
   },
   notes: {
-    required:true,
     type: String
   }
 });

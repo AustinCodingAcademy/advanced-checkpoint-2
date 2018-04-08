@@ -1,5 +1,5 @@
 
-import movieIdeas from "./movieIdeas";
+//import movieIdeas from "./movieIdeas";
 import express from "express";
 import bodyParser from "body-parser";
 import MovieIdeasRoutes from "./routes/MovieIdeasRoutes"
@@ -33,11 +33,23 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://psc478:psc478@ds131329.mlab.com:31329/advanced-checkpoint-2");
 
 const schema = new mongoose.Schema({
-body: {
+title: {
 required:true,
 type: String
 },
 genre: {
+required:true,
+type: String
+},
+logline: {
+required:true,
+type: String
+},
+budget: {
+required:true,
+type: String
+},
+notes: {
 required:true,
 type: String
 }
@@ -46,8 +58,11 @@ type: String
 const MovieIdeaModel = mongoose.model("MovieIdea", schema);
 
 const movieIdea = new MovieIdeaModel({
-body: "stuff",
-genre:"test"
+title: "one",
+genre:"test",
+logline:"yup",
+budget:"small",
+notes:"notepad"
 });
 movieIdea.save()
 .then(mov => {

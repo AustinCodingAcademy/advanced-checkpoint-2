@@ -1,5 +1,6 @@
 import MovieIdeaModel from "../models/MovieIdeaModel";
 
+//list is working
 export function list(request, response) {
   console.log("movieIdeasController list");
   //console.log("movieIdeasController list request",request);
@@ -10,6 +11,7 @@ export function list(request, response) {
  });
 }
 
+//create is not working
 export function create(request, response) {
   console.log("MovieIdeasController create");
   const movieIdea = new MovieIdeaModel({
@@ -21,11 +23,12 @@ export function create(request, response) {
   });
   movieIdea.save()
   .then(mov => {
-    console.log("MovieIdeasController create");
+    console.log("MovieIdeasController create OUTPUT");
     return response.json(mov);
   });
 }
 
+//show is working
 export function show(request, response) {
   console.log("MovieIdeasController request params",request.params);
   console.log("MovieIdeasController request.params.id",request.params.id);
@@ -52,6 +55,11 @@ export function update(request, response) {
 }
 
 export function remove(request, response) {
+  console.log("Remove working");
+  MovieIdeaModel.findById(request.params.id).exec()
+    .then(movieIdea => {
+      movieIdea.remove()
+    });
  return response.json({});
 }
 

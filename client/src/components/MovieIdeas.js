@@ -1,39 +1,15 @@
-import React, { Component } from "react";
-//import CollapsableMapper from "./CollapsableMapper";
-import {Link} from "react-router-dom";
+import React from "react";
+import Mapper from "./Mapper";
 
-class MovieIdeas extends Component {
-  componentDidMount() {
-    this.props.loadMovieIdeas();
-    this.props.movieIdeas;
-  }
+function MovieIdeas(props){
 
-  render(){
-    console.log("MovieIdeas component props.movieIdeas:", this.props.movieIdeas[0]);
-
-    let movieDivs = "";
-
-    movieDivs = "TEST"/*props.movieIdeas.map((d,i) => {
-      return (
-        <div key={i}>
-          {props.movieIdeas[d].title}
-          <Link to={"/" + props.path + "/" + d._id}> View </Link>
-        </div>
-      );
-    });*/
-
+    //console.log("MovieIdeas component props.movieIdeas:", props.movieIdeas[0]);
 
     return (
       <div>
-        {movieDivs}
+      <Mapper data={props.movieIdeas} path="movieIdea" field="title" field1="budget" field2="genre"/>
       </div>
     );
-  }
 }
 
 export default MovieIdeas;
-
-/*
-//this goes in the div
-<CollapsableMapper data={props.movieIdeas} path="movieIdea" field="title" />
-*/

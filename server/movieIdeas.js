@@ -1,12 +1,16 @@
 export default [
   {
-    "_id": 1,
-    "body": "Unreliable narrator doesn't realize he was the murderer all along!",
-    "genre": "Mystery"
+    "title": "I dunnit",
+    "logline": "Unreliable narrator doesn't realize he was the murderer all along!",
+    "genre": "Mystery",
+    "budget": "Blockbuster",
+    "notes": "none"
   },
   {
-    "_id": 2,
-    "body": "Time travel narrative shown out of order, the twist is that realization.",
-    "genre": "Sci-fi"
+    "title": "NOT about time"
+    "logline": "Time travel narrative shown out of order, the twist is that realization.",
+    "genre": "Sci-fi",
+    "budget": "indie",
+    "notes": "none"
   }
 ];
