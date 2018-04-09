@@ -46,10 +46,7 @@ export function deleteMovieIdea(id) {
   return function (dispatch) {
     fetch("/movieIdeas/"+id, {
       method: "DELETE",
-      headers : {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-       }
+      body: JSON.stringify(id)
     }).then(() => {
       console.log("deleteMovieIdea dispatching");
       dispatch(loadMovieIdeas());
