@@ -57,11 +57,14 @@ export function update(request, response) {
 export function remove(request, response) {
   console.log("Remove working");
   MovieIdeaModel.findById(request.params.id).exec()
-    .then(movieIdea => {
-      movieIdea.remove()
-    });
- return response.json({});
+  .then(movieDelete => {
+    movieDelete.remove(function (err, movieDelete) {
+      if (err) return handleError(err);
+    })
+    return response.json();
+  });
 }
+
 
 /*export function show(request, response) {
   let id = request.params.movieIdeaID; //set id equal to the request in the url

@@ -7,7 +7,7 @@ function MovieIdeas(props){
 
     return (
       <div>
-      <Mapper data={props.movieIdeas} path="movieIdea" field="title" field1="budget" field2="genre"/>
+      <Mapper deleteMovieIdea={props.deleteMovieIdea} data={props.movieIdeas} path="movieIdea" field="title" field1="budget" field2="genre"/>
       </div>
     );
 }

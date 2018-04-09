@@ -38,19 +38,15 @@ required:true,
 type: String
 },
 genre: {
-required:true,
 type: String
 },
 logline: {
-required:true,
 type: String
 },
 budget: {
-required:true,
 type: String
 },
 notes: {
-required:true,
 type: String
 }
 });
@@ -64,8 +60,19 @@ logline:"yup",
 budget:"small",
 notes:"notepad"
 });
-movieIdea.save()
-.then(mov => {
-console.log("MovieIdeasController create");
-return response.json(mov);
-});*/
+
+//movieIdea.save()
+//.then(mov => {
+//console.log("MovieIdeasController create");
+//return response.json(mov);
+//});
+
+
+MovieIdeaModel.findById("5acab16ed341a80600e18fe1").exec()
+.then(movieDelete => {
+  movieDelete.remove(function (err, movieDelete) {
+    if (err) return handleError(err);
+  })
+  return response.json();
+});
+*/
