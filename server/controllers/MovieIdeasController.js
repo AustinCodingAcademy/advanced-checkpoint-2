@@ -55,8 +55,8 @@ export function update(request, response) {
 }
 
 export function remove(request, response) {
-  console.log("Remove working");
-  MovieIdeaModel.findById(request.params.id).exec()
+  console.log("Remove request.params.id",request.params.movieIdeaID);
+  MovieIdeaModel.findById(request.params.movieIdeaID).exec()
   .then(movieDelete => {
     movieDelete.remove(function (err, movieDelete) {
       if (err) return handleError(err);
