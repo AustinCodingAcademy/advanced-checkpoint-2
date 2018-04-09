@@ -18,7 +18,7 @@ function Mapper(props) {
             <Link to={"/" + props.path + "/" + d._id}> View </Link>
             <button onClick={() => {
                   //console.log("Delete Button props.deleteMovieIdea:",props.deleteMovieIdea);
-                  props.deleteMovieIdea();
+                  props.deleteMovieIdea(d._id);
               }
               }>
                Delete

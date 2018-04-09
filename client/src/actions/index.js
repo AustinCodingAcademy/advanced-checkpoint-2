@@ -42,7 +42,7 @@ export function createMovieIdea(v) {
 }
 
 export function deleteMovieIdea(id) {
-  console.log("deleteMovieIdea starting");
+  console.log("deleteMovieIdea id:",id);
   return function (dispatch) {
     fetch("/movieIdeas/"+id, {
       method: "DELETE",
