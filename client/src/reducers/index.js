@@ -1,11 +1,11 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
+function movies(state = "", action) {
   return state;
 }
 
 
 const rootReducer = combineReducers({
-  someThing
+  movies
 });
 export default rootReducer;

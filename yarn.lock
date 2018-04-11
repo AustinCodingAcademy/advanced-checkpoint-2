@@ -4045,6 +4045,13 @@ mongodb-core@2.1.10:
     bson "~1.0.4"
     require_optional "~1.0.0"
 
+mongodb-core@3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-3.0.6.tgz#c1bf0ab868ece5b1d90917b58d7a8855cd8ba6ff"
+  dependencies:
+    bson "~1.0.4"
+    require_optional "^1.0.1"
+
 mongodb@2.2.26:
   version "2.2.26"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.26.tgz#1bd50c557c277c98e1a05da38c9839c4922b034a"
@@ -4052,6 +4059,12 @@ mongodb@2.2.26:
     es6-promise "3.2.1"
     mongodb-core "2.1.10"
     readable-stream "2.2.7"
+
+mongodb@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.0.6.tgz#72d2444b14f9784869e0c33436c49c8dca5083e4"
+  dependencies:
+    mongodb-core "3.0.6"
 
 mongoose@^4.10.2:
   version "4.10.2"
@@ -5379,6 +5392,13 @@ require-uncached@^1.0.2:
   dependencies:
     caller-path "^0.1.0"
     resolve-from "^1.0.0"
+
+require_optional@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/require_optional/-/require_optional-1.0.1.tgz#4cf35a4247f64ca3df8c2ef208cc494b1ca8fc2e"
+  dependencies:
+    resolve-from "^2.0.0"
+    semver "^5.1.0"
 
 require_optional@~1.0.0:
   version "1.0.0"
