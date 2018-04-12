@@ -14,6 +14,7 @@ import {
   Route,
   Switch
  } from "react-router-dom";
+import CreateQuestionContainer from "./containers/CreateQuestionContainer";
 
 class App extends Component {
   constructor() {
@@ -29,6 +30,7 @@ class App extends Component {
         Client
         <QuestionContainer />
         <QuestionsContainer />
+        <CreateQuestionContainer />
 
 
         {/* <Link to="/questions"><Button>List Questions</Button></Link> */}
