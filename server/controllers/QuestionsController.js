@@ -21,7 +21,7 @@ function create(request, response) {
         name: request.body.name,
         length: request.body.length,
         subject: request.body.subject,
-        teacher: request.body.teacher,
+        difficulty: request.body.difficulty,
     });
     question.save()
     .then(questions => {
@@ -36,7 +36,7 @@ function update(request, response) {
       question.name = request.body.name || question.name;
       question.subject = request.body.subject || question.subject;
       question.length = request.body.length || question.length;
-      question.teacher = request.body.teacher || question.teacher;
+      question.difficulty = request.body.difficulty || question.difficulty;
       return question.save();
     })
     .then(c=> {

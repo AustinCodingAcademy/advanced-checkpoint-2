@@ -17,7 +17,7 @@ const schema = new mongoose.Schema({
    required: true,
    type: String
  },
- teacher: {
+ difficulty: {
     required: true,
     type: String
   },

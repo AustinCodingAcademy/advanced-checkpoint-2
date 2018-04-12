@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import { Grid,Table,Button} from 'semantic-ui-react';
+// import { Grid,Table,Button} from 'semantic-ui-react';
 
 function Questions(props) {
 
@@ -19,7 +19,29 @@ function Questions(props) {
     //console.log(this);
   return (
     <div>
-      <Grid centered>
+                          
+                      {/* { questionsDivs.map((c, index) =>
+                       
+                            {c.questionid},
+                            {c.name}, 
+                         
+                          
+                            {c.length}
+                         
+                            {c.subject}
+                            {c.difficulty}
+                            <Link to={"/question/" + c._id}> View </Link>
+                          
+                            <Button onClick={
+                                        (e) => {
+                                            props.removequestion(c._id);  
+                                        }
+                                }>Delete</Button>
+                         
+                        )} */}
+                 
+
+      {/* <Grid centered>
         <Grid.Row>
         </Grid.Row>
      
@@ -32,7 +54,7 @@ function Questions(props) {
                       <Table.HeaderCell>Name</Table.HeaderCell>
                       <Table.HeaderCell>Length</Table.HeaderCell>
                       <Table.HeaderCell>Subject</Table.HeaderCell>
-                      <Table.HeaderCell>Teacher</Table.HeaderCell>
+                      <Table.HeaderCell>Difficulty</Table.HeaderCell>
                       <Table.HeaderCell>View Detail</Table.HeaderCell>
                       <Table.HeaderCell>Delete question</Table.HeaderCell>
                     </Table.Row>
@@ -54,7 +76,7 @@ function Questions(props) {
                             {c.subject}
                           </Table.Cell>
                           <Table.Cell>
-                            {c.teacher}
+                            {c.difficulty}
                           </Table.Cell>
                           <Table.Cell>
                             <Link to={"/question/" + c._id}> View </Link>
@@ -73,7 +95,7 @@ function Questions(props) {
   
             </Grid.Column>
       
-      </Grid>
+      </Grid> */}
     </div>
   );
 }

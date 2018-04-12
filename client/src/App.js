@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import Question from "./containers/QuestionContainer";
  import QuestionContainer from "./containers/QuestionContainer";
+ import QuestionsContainer from "./containers/QuestionsContainer";
+
 // import semantic from 'semantic-ui';
 // import {Button} from "semantic-ui-react";
 
@@ -26,6 +28,8 @@ class App extends Component {
       <div>
         Client
         <QuestionContainer />
+        <QuestionsContainer />
+
 
         {/* <Link to="/questions"><Button>List Questions</Button></Link> */}
         <Switch>

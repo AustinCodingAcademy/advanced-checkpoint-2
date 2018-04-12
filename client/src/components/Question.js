@@ -23,7 +23,7 @@ class Question extends Component {
   //             <div><b>Name:</b> {this.props.question.name}</div>
   //             <div><b>Length:</b> {this.props.question.length}</div>
   //             <div><b>Subject:</b> {this.props.question.subject}</div>
-  //             <div><b>Teacher:</b> {this.props.question.teacher}</div>
+  //             <div><b>difficulty:</b> {this.props.question.difficulty}</div>
   //         </Grid.Column>
   //       </Grid>
   //     </div>
@@ -43,7 +43,7 @@ class Question extends Component {
               <div><b>Name:</b> {this.props.question.name}</div>
               <div><b>Length:</b> {this.props.question.length}</div>
               <div><b>Subject:</b> {this.props.question.subject}</div>
-              <div><b>Teacher:</b> {this.props.question.teacher}</div>
+              <div><b>Difficulty:</b> {this.props.question.difficulty}</div>
          
         
         </div>
