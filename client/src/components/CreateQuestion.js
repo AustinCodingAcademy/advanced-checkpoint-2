@@ -173,6 +173,11 @@ class CreateQuestion extends React.Component {
                     }} />
                   </div>
                   {lengthFlag}
+
+
+                  {/* const TestComponent = props => ( <Form> <Field name="dropdownName" component={ DropdownFormField} label="Dropdown Test" /> </Form> ) const DropdownFormField = props => ( <Form.Field> <Dropdown selection {...props.input} value={props.input.value} onChange={(param,data) => props.input.onChange(data.value)} placeholder={props.label} /> </Form.Field> )
+                  const TestComponent = props => ( <Form> <Field name="dropdownName" component={ DropdownFormField} label="Dropdown Test" /> </Form> ) const DropdownFormField = props => ( <Form.Field> <Dropdown selection {...props.input} value={props.input.value} onChange={(param,data) => props.input.onChange(data.value)} placeholder={props.label} /> </Form.Field> ) */}
+
                   <div className="dropdown">
                   <center>Subject:</center><Dropdown placeholder="Select Subject" fluid selection onChange={this.subjectSelect} options={subjectFields} />
                   </div> 

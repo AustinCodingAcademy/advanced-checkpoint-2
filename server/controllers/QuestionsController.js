@@ -1,4 +1,4 @@
-//const questions = require("../questions");
+const questions = require("../questions");
 const Question = require("../models/Question");
 
 function list(request, response) {

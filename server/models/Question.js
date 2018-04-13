@@ -14,7 +14,7 @@ const schema = new mongoose.Schema({
    type: String
  },
  subject: {
-   required: true,
+   required: false,
    type: String
  },
  difficulty: {

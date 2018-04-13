@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-// import { Grid,Table,Button} from 'semantic-ui-react';
+import { Grid,Table,Button} from 'semantic-ui-react';
 
 function Questions(props) {
 
@@ -41,7 +41,7 @@ function Questions(props) {
                         )} */}
                  
 
-      {/* <Grid centered>
+       <Grid centered>
         <Grid.Row>
         </Grid.Row>
      
@@ -95,7 +95,7 @@ function Questions(props) {
   
             </Grid.Column>
       
-      </Grid> */}
+      </Grid> 
     </div>
   );
 }

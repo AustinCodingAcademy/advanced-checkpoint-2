@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import QuestionsContainer from "../containers/QuestionsContainer";
-import SearchQuestionsContainer from "../containers/SearchQuestionsContainer";
+// import SearchQuestionsContainer from "../containers/SearchQuestionsContainer";
 
 
 class Main extends Component {
@@ -17,7 +17,7 @@ class Main extends Component {
           </div>
           <div style={{float: "left", width: "49%"}}>
             {/*}<div><CreateQuestionContainer /></div>{*/}
-            <div><SearchQuestionsContainer /></div>
+            {/* <div><SearchQuestionsContainer /></div> */}
             {/*}<div><EditQuestionContainer /></div>{*/}
           </div>
         </div>
