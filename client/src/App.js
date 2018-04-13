@@ -26,6 +26,28 @@ class App extends Component {
   componentDidMount() {
     this.props.loadQuestions();
   }
+
+
+  render() {
+    return (
+      <Router>
+        <div>
+        <center> 
+          <h1>Question Tracker</h1>
+          <Link to="/questions"><Button>List Questions</Button></Link>
+          <Link to="/createquestion"><Button>Create question</Button></Link>
+          <Link to="/editquestion"><Button>Edit question</Button></Link>
+        </center>
+          <Switch>  
+            <Route path="/question/:id" component={Question} />
+            <Route path="/questions" component={Main} />
+            <Route path="/createquestion" component={CreateQuestion} />
+            {/* <Route path="/editquestion" component={EditQuestion} /> */}
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
   // render() {
   //   return (
   //     <Router>
@@ -46,28 +68,6 @@ class App extends Component {
   //     </Router>
   //   );
   // }
-
-  render() {
-    return (
-      <Router>
-        <div>
-        <center> 
-          <h1>Question Catalog</h1>
-          <Link to="/questions"><Button>List questions</Button></Link>
-          <Link to="/createquestion"><Button>Create question</Button></Link>
-          <Link to="/editquestion"><Button>Edit question</Button></Link>
-        </center>
-          <Switch>  
-            <Route path="/question/:id" component={Question} />
-            <Route path="/questions" component={Main} />
-            <Route path="/createquestion" component={CreateQuestion} />
-            {/* <Route path="/editquestion" component={EditQuestion} /> */}
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
-
 }
 export default (App);
 
