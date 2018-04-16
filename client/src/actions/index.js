@@ -33,6 +33,7 @@ export function loadQuestions() {
   }
 
   export function createQuestion(c) {
+      console.log(c);
     return function (dispatch) {
       fetch("/questions", {
         method: "POST",

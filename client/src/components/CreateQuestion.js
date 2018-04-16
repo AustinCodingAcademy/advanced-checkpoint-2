@@ -45,42 +45,47 @@ class CreateQuestion extends React.Component {
             <div>
               questionid: <input onChange={(e) => {
                 // const question = {questionid: e.target.value};
-                this.setState({
-                    questionid: e.target.value
-                });
+                // this.setState({
+                //     questionid: e.target.value
+                // });
+                this.state.question.questionid = e.target.value
               }} />
             </div>
             <div>
               name: <input onChange={(e) => {
                 // const question = {name: e.target.value};
-                this.setState({
-                    name: e.target.value
-                    //   question: Object.assign(this.state.question,question)
-                });
+                // this.setState({
+                //     name: e.target.value
+                //     //   question: Object.assign(this.state.question,question)
+                // });
+                this.state.question.name = e.target.value
               }} />
             </div>
             <div>
               length: <input onChange={(e) => {
                 // const question = {length: e.target.value};
-                this.setState({
-                    length: e.target.value
-                });
+                // this.setState({
+                //     length: e.target.value
+                // });
+                this.state.question.length = e.target.value
               }} />
             </div>
             <div>
               subject: <input onChange={(e) => {
                 // const question = {subject: e.target.value};
-                this.setState({
-                    subject: e.target.value
-                });
+                // this.setState({
+                //     subject: e.target.value
+                // });
+                this.state.question.subject = e.target.value
               }} />
             </div>
             <div>
               difficulty: <input onChange={(e) => {
                 // const question = {difficulty: e.target.value};
-                this.setState({
-                    difficulty: e.target.value
-                });
+                // this.setState({
+                //     difficulty: e.target.value
+                // });
+                this.state.question.difficulty = e.target.value
               }} />
             </div>
             <button>Add</button>

@@ -1,5 +1,6 @@
 // const questions = require("../questions");
-const Question = require("../models/Question");
+// const Question = require("../models/Question");
+import Question from "../models/Question";
 
 function list(request, response) {
     Question.find({}).exec()
@@ -16,7 +17,7 @@ function show(request, response) {
 }
 
 function create(request, response) {
-    const question= new question({
+    const question = new Question({
         questionid: request.body.questionid,
         name: request.body.name,
         length: request.body.length,
