@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 var bodyParser = require('body-parser')
 const app = express();
 app.use(bodyParser.json())
+app.use(express.static("public"));
 
 // mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
