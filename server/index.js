@@ -6,7 +6,7 @@ require("dotenv").config();
 app.use(bodyParser.json())
 app.use(express.static("public"));
 
-// mongoose.set("debug", true);
+mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb://localhost/checkpoint2");
 mongoose.connect(process.env.MONGODB_URI);
