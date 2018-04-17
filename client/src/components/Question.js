@@ -32,8 +32,10 @@ class Question extends Component {
 
   //hello
     render() {
-    //console.log(this.props);
+      
+    console.log(this.props.question._id);
       return (
+        
         <div>
        
      

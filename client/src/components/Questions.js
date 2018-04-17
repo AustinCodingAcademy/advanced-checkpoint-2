@@ -13,13 +13,13 @@ function Questions(props) {
           c.subject.toLowerCase().indexOf(props.searchFilter.toLowerCase())  > -1) || (props.searchFilter && 
             c.questionid.toString().indexOf(props.searchFilter)  > -1) || (props.searchFilter && 
               c.length.toString().indexOf(props.searchFilter)  > -1) || (props.searchFilter && 
-                c.teacher.toLowerCase().indexOf(props.searchFilter.toLowerCase())  > -1);
+                c.difficulty.toLowerCase().indexOf(props.searchFilter.toLowerCase())  > -1);
       })
     }
     //console.log(this);
   return (
     <div>
-                          
+     
                       {/* { questionsDivs.map((c, index) =>
                        
                             {c.questionid},

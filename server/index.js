@@ -12,6 +12,10 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI);
 
 // mongodb://<dbuser>:<dbpassword>@ds129394.mlab.com:29394/austin-prod
+
+app.get("/publicinformation", function (req, res) {
+  res.send("Anyone can see this");
+});
  
 const port = process.env.PORT || 3001;
 app.use(require('./routes/QuestionRoutes'))
