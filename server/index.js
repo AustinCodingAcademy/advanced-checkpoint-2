@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 var bodyParser = require('body-parser')
 const app = express();
+require("dotenv").config();
 app.use(bodyParser.json())
 app.use(express.static("public"));
 
