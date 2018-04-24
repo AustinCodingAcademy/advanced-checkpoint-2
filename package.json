@@ -14,7 +14,8 @@
     "compile-server": "rm -rf ./dist && babel server --out-dir dist",
     "pre-deploy": "npm run compile-server && npm run build-client && npm run clean-assets && npm run copy-assets",
     "start": "node ./dist/index",
-    "client": "cd client && npm start && cd .."
+    "client": "cd client && npm start && cd ..",
+    "postinstall": "npm run pre-deploy"
   },
   "keywords": [],
   "author": "",
