@@ -290,6 +290,10 @@ INGREDIENTS:
 	padding: 24px 32px;
 }
 
+article {
+	margin-bottom: 40px;
+}
+
 article .ingredients li {
 	padding: 12px 0 12px 36px;
 	font-family: 'Didact Gothic', sans-serif;
