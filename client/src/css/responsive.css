@@ -87,6 +87,8 @@
 }
 
 @media only screen and (max-width: 860px) {
+  .col-1 { float: none; }
+  
   .list-recipes li { width: 100%; }
 
   .list-recipes h2 { padding: 48px 72px 24px; }

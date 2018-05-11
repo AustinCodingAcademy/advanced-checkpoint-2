@@ -68,6 +68,8 @@ article .steps {
 .title::-webkit-input-placeholder { font-size: 18px; }
 .title::-ms-input-placeholder { font-size: 18px; }
 
+.col-1 { float: left; }
+
 /* -------------------------------------------------------
 
 TYPOGRAPHY:
@@ -440,6 +442,8 @@ article .thumbnail {
 
 .add-recipe .thumbnail {
 	margin-bottom: 24px;
+	float: none;
+	margin-right: -800px;
 }
 
 .thumbnail-upload {
@@ -543,7 +547,7 @@ article .steps li span {
 	user-select: none;
 }
 
-.add-recipe .steps { margin-top: -164px; }
+/* .add-recipe .steps { margin-top: -164px; } */
 
 .add-recipe .steps .step {
 	position: relative;

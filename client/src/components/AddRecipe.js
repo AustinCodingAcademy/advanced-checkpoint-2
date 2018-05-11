@@ -212,13 +212,17 @@ class AddRecipe extends React.Component {
           </div>
         </div>
 
-        <AddThumbnail setThumbnail={this.setThumbnail} file={this.state.thumbnail.file} edit={this.edit} value={this.state.thumbnail} />
+        <div className="col-1">
+          <AddThumbnail setThumbnail={this.setThumbnail} file={this.state.thumbnail.file} edit={this.edit} value={this.state.thumbnail} />
 
-        <InputGroup items="ingredients" setItems={this.setIngredients} onChange={this._blockForm} edit={this.edit} value={this.state.ingredients} />
+          <InputGroup items="ingredients" setItems={this.setIngredients} onChange={this._blockForm} edit={this.edit} value={this.state.ingredients} />
+        </div>
 
-        <InputGroup items="steps" setItems={this.setSteps} onChange={this._blockForm} edit={this.edit} value={this.state.steps} />
+        <div className="col-2">
+          <InputGroup items="steps" setItems={this.setSteps} onChange={this._blockForm} edit={this.edit} value={this.state.steps} />
 
-        <button className="button submit" onClick={this.onSubmit}>Add Recipe</button>
+          <button className="button submit" onClick={this.onSubmit}>Add Recipe</button>
+        </div>
 
         <Prompt when={this.state._isBlocking} message="Do you want to leave? No changes have been saved yet." />
       </form>
