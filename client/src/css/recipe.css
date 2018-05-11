@@ -364,6 +364,7 @@ article .ingredients li:not(:last-of-type) { border-bottom: 1px dotted #ebedf1; 
 	outline: none;
 	box-shadow: none;
 	margin: 0;
+	border-radius: 0;
 }
 
 .ingredients:focus-within,
@@ -442,8 +443,6 @@ article .thumbnail {
 
 .add-recipe .thumbnail {
 	margin-bottom: 24px;
-	float: none;
-	margin-right: -800px;
 }
 
 .thumbnail-upload {
