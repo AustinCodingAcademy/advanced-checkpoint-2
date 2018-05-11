@@ -1,10 +1,20 @@
 import App from "./App";
-import "./App.css";
+import { loadRecipes } from "./actions";
 import { connect } from "react-redux";
+
+function mapStateToProps(state) {
+  return {
+    redirect: state.redirect
+  }
+}
 
 function mapDispatchToProps(dispatch) {
   return {
+    loadRecipes: function() {
+      let action = loadRecipes();
+      dispatch(action);
+    }
   };
 }
 
-export default connect(null,mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

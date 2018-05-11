@@ -1,0 +1,102 @@
+/* ---------- List Recipes ---------- */
+
+.list-recipes li {
+	background-color: #fff;
+	box-shadow: 0 1px 0 #e3e4ec;
+	box-sizing: border-box;
+	float: left;
+	margin-bottom: 40px;
+	width: calc(50% - 20px);
+	border-radius: 4px;
+	transition: box-shadow 0.3s;
+}
+
+.list-recipes li:hover,
+.list-recipes li:focus-within {
+	box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
+}
+
+.list-recipes .thumbnail {
+	display: block;
+}
+
+.list-recipes li img {
+	display: block;
+	width: 100%;
+}
+
+.list-recipes h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+	padding: 48px 60px 24px;
+}
+
+.list-recipes a {
+	color: #4b4d5a;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.list-recipes li > a {
+	display: block;
+}
+
+.list-recipes img {
+	transition: transform 0.3s;
+}
+
+.list-recipes img:hover,
+.list-recipes img:focus {
+	transform: scale(1.05, 1.05);
+}
+
+.list-recipes footer {
+	box-sizing: border-box;
+	color: #b2b4c0;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 12px;
+	justify-content: space-between;
+	line-height: 1.5;
+	padding: 0 0 48px;
+	margin: 0 60px;
+}
+
+.list-recipes .delete {
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(0.1, 0.1);
+	position: absolute;
+	padding: 0px;
+	width: 32px;
+	height: 32px;
+	top: -16px;
+	left: -16px;
+	box-shadow: 0 0 transparent;
+	z-index: 1;
+	color: #fff;
+	background-color: rgba(255, 156, 138, 0.6);
+	transition: opacity 0.3s, transform 0.3s, visibility 0.3s linear, background-color 0.3s;
+}
+
+.deleting .delete {
+	transform: scale(1, 1);
+	opacity: 1;
+	visibility: visible;
+}
+
+.deleting .delete:focus {
+	box-shadow: 0 0 0 2px rgba(230, 101, 101, 0.7);
+}
+
+.deleting .delete:hover {
+	background-color: #ff9c8a;
+}
+
+.list-recipes footer h3 { margin-bottom: 2px; }
+
+.list-recipes span { display: inline-block; }
+
+.list-recipes .serves { align-self: center; }
