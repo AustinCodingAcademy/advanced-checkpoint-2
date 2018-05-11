@@ -51,8 +51,7 @@ HEADER:
   padding: 40px;
   box-sizing: border-box;
   left: 0;
-  background-color: transparent;
-  transition: padding 0.3s, transform 0.4s, background-color 0s 0.3s;
+  transition: padding 0.3s, transform 0.4s;
   z-index: 10;
 }
 
