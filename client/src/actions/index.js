@@ -2,7 +2,7 @@ export function addRecipe(recipe) {
   return function(dispatch) {
     delete recipe._isBlocking;
     
-    let postRecipe = fetch("http://127.0.0.1:3001/recipes", {
+    let postRecipe = fetch("/recipes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(recipe)
@@ -14,7 +14,7 @@ export function addRecipe(recipe) {
       data.append('thumbnail', recipe.thumbnail.file);
       data.append('slug', recipe.thumbnail.slug);
 
-      postThumbnail = fetch("http://127.0.0.1:3001/uploads", {
+      postThumbnail = fetch("/uploads", {
         method: "POST",
         body: data
       });
@@ -32,7 +32,7 @@ export function editRecipe(recipe, deleteRecipe = false) {
   return function(dispatch) {
     let id = recipe.id;
     
-    let postRecipe = fetch(`http://127.0.0.1:3001/recipe/${id}`, {
+    let postRecipe = fetch(`/recipe/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(recipe)
@@ -44,7 +44,7 @@ export function editRecipe(recipe, deleteRecipe = false) {
       data.append('thumbnail', recipe.thumbnail.file);
       data.append('slug', recipe.thumbnail.slug);
 
-      postThumbnail = fetch("http://127.0.0.1:3001/uploads", {
+      postThumbnail = fetch("/uploads", {
         method: "POST",
         body: data
       });
@@ -63,7 +63,7 @@ export function editRecipe(recipe, deleteRecipe = false) {
 
 export function deleteRecipe(id) {
   return function(dispatch) {
-    fetch(`http://127.0.0.1:3001/recipe/${id}`)
+    fetch(`/recipe/${id}`)
     .then( (response) => {
       return response.json();
     }).then( (recipe) => {
@@ -75,7 +75,7 @@ export function deleteRecipe(id) {
 
 export function loadRecipes(redirectTo) {  
   return function(dispatch) {
-    fetch("http://127.0.0.1:3001/recipes")
+    fetch("/recipes")
     .then( (response) => {
       return response.json();
     }).then( (recipes) => {
