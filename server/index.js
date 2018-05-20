@@ -2,7 +2,6 @@ import express from "express";
 import fileUpload from "express-fileupload";
 import bodyParser from "body-parser";
 import slug from "slug";
-import fs from "fs";
 // import mongoose from "mongoose";
 
 import recipesRoute from "./views/recipes";

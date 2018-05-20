@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 let recipes = require('../models/db.json');
 
 export function list(req, res) {
@@ -9,7 +11,7 @@ export function post(req, res){
 
   recipes.push(recipe);
 
-  fs.writeFile(__dirname + '/db.json', JSON.stringify(recipes), (err) => {
+  fs.writeFile(path.join(__dirname, '..', 'models', 'db.json'), JSON.stringify(recipes), (err) => {
     if (err)
       return res.status(500).send(err);
   });
@@ -31,7 +33,7 @@ export function edit(req, res){
   const index = recipes.indexOf(oldRecipe);
   recipes[index] = recipe;
 
-  fs.writeFile(__dirname + '/db.json', JSON.stringify(recipes), (err) => {
+  fs.writeFile(path.join(__dirname, '..', 'models', 'db.json'), JSON.stringify(recipes), (err) => {
     if (err)
       return res.status(500).send(err);
   });
