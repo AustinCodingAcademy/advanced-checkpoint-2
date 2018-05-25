@@ -1,0 +1,82 @@
+/* FORMS */
+
+input, textarea {
+	border: none;
+	box-sizing: border-box;
+	display: block;
+	color: #787986;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 14px;
+	line-height: 1;
+	margin: 0 0 24px;
+	width: 100%;
+	padding: 18px 24px;
+	border-radius: 4px;
+	outline: none;
+	box-shadow: 0 1px 0 #e3e4ec;
+}
+
+textarea {
+	line-height: 1.6;
+	padding: 20px 24px;
+	resize: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+  color: #b2b4c0;
+	font-size: 14px;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #b2b4c0;
+	font-size: 14px;
+}
+
+button, .button {
+	display: block;
+  background-color: #fff;
+	border: none;
+	box-shadow: 0 1px #e3e4ec;
+	border-radius: 24px;
+	line-height: 1;
+	padding: 12px 24px;
+	box-sizing: border-box;
+	float: right;
+	clear: right;
+	cursor: pointer;
+	outline: none;
+}
+
+/* Focus & Active Styles */
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder{ color: #787986; }
+
+input:focus::-ms-input-placeholder,
+textarea:focus::-ms-input-placeholder { color: #787986; }
+
+input:focus, textarea:focus {
+	box-shadow: 0 0 0 1px #c3d6ee, 0 0 12px rgba(183, 206, 233, 0.3);
+}
+
+button:focus, .button:focus {
+	box-shadow: 0 0 0 3px rgba(183, 206, 233, 0.3);
+}
+
+.incomplete {
+	box-shadow: 0 0 0 1px #e0b5b5, 0 0 12px rgba(224, 181, 181, 0.6);
+}
+
+/* For Firefox */
+input[type='number'] {
+	-moz-appearance:textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}

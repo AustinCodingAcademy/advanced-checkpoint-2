@@ -1,0 +1,92 @@
+/* -------------------------------------------------------
+
+BASE.CSS
+
+------------------------------------------------------- */      
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  background-color: #eceef5;
+}
+
+main {
+  width: calc(100% - 280px);
+  position: relative;
+  left: 280px;
+  top: 0;
+  padding: 40px 40px 0;
+  box-sizing: border-box;
+}
+
+.small, button {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11px;
+	font-weight: 500;
+  text-transform: uppercase;
+  color: #9498ad;
+}
+
+.icon {
+	align-self: center;
+	color: #c7cbdf;
+	font-size: 16px;
+}
+
+a:not(.button):focus,
+a:not(.button):focus img { outline: 2px solid #c3d6ee; }
+
+a:active:focus,
+a:active:focus img  { outline: none; }
+
+/* -------------------------------------------------------
+
+HEADER:
+
+------------------------------------------------------- */      
+
+.site-header {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  padding: 40px;
+  box-sizing: border-box;
+  left: 0;
+  transition: padding 0.3s, transform 0.4s;
+  z-index: 10;
+}
+
+.site-header h1 {
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-transform: lowercase;
+}
+
+.site-header h1 a {
+  text-decoration: none;
+}
+
+.site-header h1 a img {
+  width: 60px;
+  display: block;
+}
+
+/* -------------------------------------------------------
+
+MENU
+
+------------------------------------------------------- */      
+
+.menu a {
+  text-decoration: none;
+  float: left; 
+  clear: left;
+  margin-bottom: 12px;
+}
+
+.menu button { float: left; }
+
+.menu svg {
+  font-size: 8px;
+  margin-right: 12px;
+  color: #c7cbdf;
+}
