@@ -1,4 +1,4 @@
-Spork - React.js Reipe App
+Spork - React.js Recipe App
 
 LIVE DEMO w/ USER REGISTRATION COMING SOON!
 
