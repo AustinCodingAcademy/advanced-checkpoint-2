@@ -1,5 +1,14 @@
-Spork - React.js Recipe App
+## Spork - React.js Recipe App
 
+Spork is a simple CRUD app for storing recipes. The UI is built with React.js and the backend utilizes REST.
+
+### Live Demo:
 https://spork-demo.herokuapp.com/
 
-To run app on local machine, download project, open in terminal, then run "yarn install", then "yarn start"
+### Local Installation:
+Clone project, then run in terminal:
+
+```
+yarn install
+yarn start
+```
