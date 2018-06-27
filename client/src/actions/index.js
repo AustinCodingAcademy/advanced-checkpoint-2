@@ -37,4 +37,21 @@ export function fetchUsers() {
     
     };
   }
+
+  export function deleteUser(id) {
+    return function (dispatch) {
+          
+      fetch(`http://localhost:4000/users/${id}`, {
+        method: "DELETE"
+      }
+   )
+          .then( (response) => {
+            return response.json();
+          }).then(() => {
+            dispatch(fetchUsers());
+          });
+    
+    };
+  
+  }
     
