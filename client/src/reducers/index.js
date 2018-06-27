@@ -1,11 +1,15 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
+
+
+function users(state = [], action) {
+  if (action.type === "USERS_FETCHED") {
+    return action.value;
+  }
   return state;
 }
 
-
 const rootReducer = combineReducers({
-  someThing
+  users
 });
 export default rootReducer;
