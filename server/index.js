@@ -4,7 +4,7 @@ const app = express();
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/checkpoint2");
+// mongoose.connect("mongodb://localhost/checkpoint2");
 
 
 const port = process.env.PORT || 3001;
