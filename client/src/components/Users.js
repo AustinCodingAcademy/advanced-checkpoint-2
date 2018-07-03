@@ -10,7 +10,7 @@ const Users = (props) => {
       <div key={i}>
         {user.firstName} - {user.lastName} - {user.state}
        <Link to={"/user/" + user._id}><button>View</button> </Link>
-        <button>Delete</button>
+        <button onClick={() => {props.deleteUser(user._id)}}>Delete</button>
       </div>);
   });
   return (   

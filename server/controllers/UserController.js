@@ -14,6 +14,6 @@ module.exports.create = function create(req, res) {
 // module.exports.update = function update(request, response) {
 //   return response.json({theId: request.params.id});
 // }
-module.exports.remove = function remove(request, response) {
-    return UserModel.findByIdAndRemove(req.params.id).exec().then(user => res.json(user)); 
+module.exports.remove = function remove(req, res) {
+  return UserModel.findByIdAndRemove(req.params.id).exec().then(user => res.json(user)); 
 }

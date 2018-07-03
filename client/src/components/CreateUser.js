@@ -51,7 +51,7 @@ class CreateUser extends Component {
                 this.setState({
                   birthday: e.target.value
                 });
-              }} />
+              }} /> (e.g. 5/19/1973)
             </div>
             <div>
               Phone: <input onChange={(e) => {
@@ -59,7 +59,7 @@ class CreateUser extends Component {
                 this.setState({
                   phone: e.target.value
                 });
-              }} />
+              }} /> (e.g. 512-632-6518)
             </div>
             <div>
               State: <input onChange={(e) => {
