@@ -28,19 +28,23 @@ export function create(request, response) {
     sector: body.sector,
     averageCost: Number(body.averageCost) || 0,
     shares: Number(body.shares) || 0,
-    annualDividend: Number(body.annualDividend) || 0
+    annualDividend: Number(body.annualDividend) || 0,
   });
   newStock.save().then((stock) => {
     return response.json(stock);
   });
 }
 
-// module.exports.update = function (request, response) {
-//   const stock = new Stock(request.body);
-//   stock.save().then((saved) => {
-//     return response.json(saved);
-//   });
-// };
+export function update(request, response) {
+  const stock = request.body;
+  const query = { _id: stock._id };
+  Stock.findOneAndUpdate(query, stock, { upsert: true }, (err) => {
+    if (err) {
+      return response.send(500, { error: err });
+    }
+    return response.json(stock);
+  });
+}
 
 export function remove(request, response) {
   Stock.remove({ _id: request.params.ticker }, (err) => {

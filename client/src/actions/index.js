@@ -1,5 +1,5 @@
 export function loadStocks() {
-  return function (dispatch) {
+  return function(dispatch) {
     dispatch({
       type: "LOAD_STOCKS",
     });
@@ -22,35 +22,60 @@ export function stocksLoaded(stocks) {
 }
 
 export function createStock(stock) {
-  return function (dispatch) {
+  return function(dispatch) {
     fetch("/stock", {
       method: "POST",
       body: JSON.stringify(stock),
       headers: {
-        "Content-Type": "application/json"
-      }
+        "Content-Type": "application/json",
+      },
     })
-    .then((response) => {
-      return response.json();
-    })
-    .then((newStock) => {
-      dispatch(stockCreated(newStock));
-    });
+      .then((response) => {
+        return response.json();
+      })
+      .then((newStock) => {
+        dispatch(stockCreated(newStock));
+      });
   };
 }
 
 export function stockCreated(stock) {
   return {
     type: "STOCK_CREATED",
-    value: stock
-  };}
+    value: stock,
+  };
+}
+
+export function updateStock(stock) {
+  return function(dispatch) {
+    fetch("/stock", {
+      method: "PUT",
+      body: JSON.stringify(stock),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((newStock) => {
+        dispatch(stockUpdated(newStock));
+      });
+  };
+}
+
+export function stockUpdated(stock) {
+  return {
+    type: "STOCK_UPDATED",
+    value: stock,
+  };  
+}
 
 export function deleteStock(stock) {
-  return function (dispatch) {
+  return function(dispatch) {
     fetch("/stock/" + stock._id, {
       method: "DELETE",
-    })
-    .then(() => {
+    }).then(() => {
       dispatch(stockDeleted(stock.ticker));
     });
   };
@@ -59,17 +84,19 @@ export function deleteStock(stock) {
 export function stockDeleted(ticker) {
   return {
     type: "STOCK_DELETED",
-    value: ticker
+    value: ticker,
   };
 }
 
 export function loadPrices(tickers) {
-  return function (dispatch) {
+  return function(dispatch) {
     dispatch({
       type: "LOAD_PRICES",
     });
     const symbols = tickers.join(",");
-    fetch(`https://api.iextrading.com/1.0/stock/market/batch?symbols=${symbols}&types=quote&filter=latestPrice`)
+    fetch(
+      `https://api.iextrading.com/1.0/stock/market/batch?symbols=${symbols}&types=quote&filter=latestPrice`
+    )
       .then((response) => {
         return response.json();
       })
@@ -79,16 +106,13 @@ export function loadPrices(tickers) {
           priceMap[ticker] = prices[ticker].quote.latestPrice;
         });
         dispatch(pricesLoaded(priceMap));
-        console.log("prices", priceMap);
       });
   };
-
 }
 
 export function pricesLoaded(prices) {
   return {
     type: "PRICES_LOADED",
-    value: prices
+    value: prices,
   };
-
 }

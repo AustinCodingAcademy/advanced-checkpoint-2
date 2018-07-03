@@ -16,9 +16,11 @@ import TableRow from "@material-ui/core/TableRow";
 import IexAttribution from "./IexAttribution";
 
 const styles = {
+  root: {
+    width: "50%"
+  },
   card: {
-    width: "50%",
-    minWidth: 275,
+    // minWidth: 275,
   },
   cardActions: {
     justifyContent: "center",

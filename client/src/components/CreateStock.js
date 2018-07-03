@@ -9,9 +9,11 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 
 const styles = (theme) => ({
+  root: {
+    width: "50%"
+  },
   card: {
-    width: "50%",
-    minWidth: 275,
+    // minWidth: 275,
   },
   cardActions: {
     justifyContent: "center",
@@ -86,14 +88,32 @@ class CreateStock extends React.Component {
     });
   };
 
-  clickHandler = () => {
+  saveClickHandler = () => {
+    if (this.props.edit) {
+      this.updateStock();
+    } else {
+      this.createStock();
+    }
+    this.loadStocks();
+  };
+
+  createStock() {
     if (this.props.createStock) {
       this.props.createStock(this.state);
     }
+  }
+
+  updateStock() {
+    if (this.props.updateStock) {
+      this.props.updateStock(this.state);
+    }
+  }
+
+  loadStocks() {
     if (this.props.loadStocks) {
       this.props.loadStocks();
     }
-  };
+  }
 
   componentDidMount() {
     const stock = this.props.stocks.find(
@@ -107,121 +127,123 @@ class CreateStock extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <Card className={classes.card}>
-        <form
-          className={classes.form}
-          onSubmit={this.onSubmit}
-          noValidate
-          autoComplete="off"
-        >
-          <CardContent>
-            <TextField
-              className={classes.textField}
-              fullWidth
-              label="Ticker"
-              value={this.state.ticker}
-              onChange={this.handleChange("ticker")}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
-            <TextField
-              className={classes.textField}
-              fullWidth
-              label="Company Name"
-              value={this.state.companyName}
-              onChange={this.handleChange("companyName")}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
-            <TextField
-              id="select-sector"
-              select
-              label="Sector"
-              className={classes.textField}
-              fullWidth
-              value={this.state.sector}
-              onChange={this.handleChange("sector")}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              SelectProps={{
-                native: true,
-                MenuProps: {
-                  className: classes.menu,
-                },
-              }}
-              margin="normal"
-            >
-              {this.sectors.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </TextField>
-            <TextField
-              id="shares"
-              label="Shares"
-              value={this.state.shares}
-              onChange={this.handleChange("shares")}
-              type="number"
-              className={classes.textField}
-              fullWidth
-              InputLabelProps={{
-                shrink: true,
-              }}
-              margin="normal"
-            />
-            <TextField
-              id="averageCost"
-              label="Avg Cost Per Share"
-              value={this.state.averageCost}
-              onChange={this.handleChange("averageCost")}
-              type="number"
-              className={classes.textField}
-              fullWidth
-              InputLabelProps={{
-                shrink: true,
-              }}
-              margin="normal"
-            />
-            <TextField
-              id="annualDividend"
-              label="Annual Dividend"
-              value={this.state.annualDividend}
-              onChange={this.handleChange("annualDividend")}
-              type="number"
-              className={classes.textField}
-              fullWidth
-              InputLabelProps={{
-                shrink: true,
-              }}
-              margin="normal"
-            />
-          </CardContent>
-          <CardActions className={classes.cardActions}>
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              onClick={this.clickHandler}
-              component={Link}
-              to={"/"}
-            >
-              Save
-            </Button>
-            <Button
-              variant="contained"
-              className={classes.button}
-              component={Link}
-              to={"/"}
-            >
-              Cancel
-            </Button>
-          </CardActions>
-        </form>
-      </Card>
+      <div className={classes.root}>
+        <Card className={classes.card}>
+          <form
+            className={classes.form}
+            onSubmit={this.onSubmit}
+            noValidate
+            autoComplete="off"
+          >
+            <CardContent>
+              <TextField
+                className={classes.textField}
+                fullWidth
+                label="Ticker"
+                value={this.state.ticker}
+                onChange={this.handleChange("ticker")}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+              <TextField
+                className={classes.textField}
+                fullWidth
+                label="Company Name"
+                value={this.state.companyName}
+                onChange={this.handleChange("companyName")}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+              <TextField
+                id="select-sector"
+                select
+                label="Sector"
+                className={classes.textField}
+                fullWidth
+                value={this.state.sector}
+                onChange={this.handleChange("sector")}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                SelectProps={{
+                  native: true,
+                  MenuProps: {
+                    className: classes.menu,
+                  },
+                }}
+                margin="normal"
+              >
+                {this.sectors.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
+              <TextField
+                id="shares"
+                label="Shares"
+                value={this.state.shares}
+                onChange={this.handleChange("shares")}
+                type="number"
+                className={classes.textField}
+                fullWidth
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+              />
+              <TextField
+                id="averageCost"
+                label="Avg Cost Per Share"
+                value={this.state.averageCost}
+                onChange={this.handleChange("averageCost")}
+                type="number"
+                className={classes.textField}
+                fullWidth
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+              />
+              <TextField
+                id="annualDividend"
+                label="Annual Dividend"
+                value={this.state.annualDividend}
+                onChange={this.handleChange("annualDividend")}
+                type="number"
+                className={classes.textField}
+                fullWidth
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+              />
+            </CardContent>
+            <CardActions className={classes.cardActions}>
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.button}
+                onClick={this.saveClickHandler}
+                component={Link}
+                to={"/"}
+              >
+                Save
+              </Button>
+              <Button
+                variant="contained"
+                className={classes.button}
+                component={Link}
+                to={"/"}
+              >
+                Cancel
+              </Button>
+            </CardActions>
+          </form>
+        </Card>
+      </div>
     );
   }
 }
@@ -229,10 +251,11 @@ class CreateStock extends React.Component {
 CreateStock.propTypes = {
   classes: PropTypes.object.isRequired,
   createStock: PropTypes.func,
+  updateStock: PropTypes.func,
   loadStocks: PropTypes.func,
   stocks: PropTypes.array,
   match: PropTypes.object,
-  edit: PropTypes.bool
+  edit: PropTypes.bool,
 };
 
 export default withStyles(styles)(CreateStock);
