@@ -14,10 +14,9 @@ const styles = (theme) => ({
     minWidth: 275,
   },
   cardActions: {
-    justifyContent: "center"
+    justifyContent: "center",
   },
-  form: {
-  },
+  form: {},
   button: {
     margin: theme.spacing.unit,
   },
@@ -34,7 +33,7 @@ class CreateStock extends React.Component {
     companyName: "",
     sector: "",
     annualDividend: "",
-    averageCost: ""
+    averageCost: "",
   };
 
   sectors = [
@@ -86,16 +85,24 @@ class CreateStock extends React.Component {
     });
   };
 
-  clickHandler = (event) => {
-    console.log(this.state);
+  clickHandler = () => {
+    console.log("click", this.state, this);
+    if (this.props.createStock) {
+      this.props.createStock(this.state);
+    }
   };
 
   render() {
     const { classes } = this.props;
     return (
       <Card className={classes.card}>
-        <CardContent>
-          <form className={classes.form} noValidate autoComplete="off">
+        <form
+          className={classes.form}
+          onSubmit={this.onSubmit}
+          noValidate
+          autoComplete="off"
+        >
+          <CardContent>
             <TextField
               className={classes.textField}
               fullWidth
@@ -165,21 +172,28 @@ class CreateStock extends React.Component {
               }}
               margin="normal"
             />
-          </form>
-        </CardContent>
-        <CardActions className={classes.cardActions}>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            onClick={this.clickHandler}
-          >
-            Save
-          </Button>
-          <Button variant="contained" className={classes.button} component={Link} to={"/"}>
-            Cancel
-          </Button>
-        </CardActions>
+          </CardContent>
+          <CardActions className={classes.cardActions}>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              onClick={this.clickHandler}
+              component={Link}
+              to={"/"}
+            >
+              Save
+            </Button>
+            <Button
+              variant="contained"
+              className={classes.button}
+              component={Link}
+              to={"/"}
+            >
+              Cancel
+            </Button>
+          </CardActions>
+        </form>
       </Card>
     );
   }
@@ -187,6 +201,7 @@ class CreateStock extends React.Component {
 
 CreateStock.propTypes = {
   classes: PropTypes.object.isRequired,
+  createStock: PropTypes.func
 };
 
 export default withStyles(styles)(CreateStock);

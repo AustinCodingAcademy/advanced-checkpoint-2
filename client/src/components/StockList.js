@@ -39,7 +39,14 @@ function StockList(props) {
         <ListItemText primary={s.ticker} secondary={s.companyName} />
         <div className={classes.price}>{s.price}</div>
         <ListItemSecondaryAction>
-          <IconButton aria-label="Delete">
+          <IconButton
+            aria-label="Delete"
+            onClick={() => {
+              if (props.deleteStock) {
+                props.deleteStock(s);
+              }
+            }}
+          >
             <DeleteIcon />
           </IconButton>
         </ListItemSecondaryAction>
@@ -53,7 +60,8 @@ function StockList(props) {
         color="primary"
         aria-label="add"
         className={classes.fab}
-        component={Link} to={"/create"}
+        component={Link}
+        to={"/create"}
       >
         <AddIcon />
       </Button>

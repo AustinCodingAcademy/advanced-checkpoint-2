@@ -1,13 +1,22 @@
 import { connect } from "react-redux";
 import CreateStock from "../components/CreateStock";
+import { createStock } from "../actions";
 
-function mapStateToProps(state) {
+// function mapStateToProps(state) {
+//   return {
+//     stocks: state.stocks
+//   };
+// }
+
+function mapDispatchToProps(dispatch) {
   return {
-    stocks: state.stocks
+    createStock(stock) {
+      dispatch(createStock(stock));
+    },
   };
 }
 
 export default connect(
-  mapStateToProps,
-  null
+  null,
+  mapDispatchToProps
 )(CreateStock);

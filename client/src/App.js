@@ -5,7 +5,7 @@ import "./App.css";
 import { withStyles } from "@material-ui/core/styles";
 import StockList from "./containers/StockListContainer";
 import StockDetails from "./containers/StockDetailsContainer";
-import CreateStock from "./components/CreateStock";
+import CreateStock from "./containers/CreateStockContainer";
 
 const styles = () => ({
   root: {
