@@ -53,7 +53,7 @@ function StockList(props) {
     const { latestPrice, change, changePercent } = quote;
     return (
       <ListItem button key={i} component={Link} to={"/details/" + s.ticker}>
-        <ListItemText primary={s.ticker} secondary={s.companyName} />
+        <ListItemText primary={s.ticker} secondary={s.companyName + " | " + s.shares + " shares"} />
         <div className={change < 0 ? classes.priceDown : classes.priceUp}>
           {change < 0 ? <ArrowDropDown /> : <ArrowDropUp />}
           {numeral(latestPrice).format("0,0.00")}{" "}
