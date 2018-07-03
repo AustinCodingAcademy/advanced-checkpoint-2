@@ -20,7 +20,11 @@ class App extends Component {
   constructor() {
     super();
   }
-  componentDidMount() {}
+  
+  componentDidMount() {
+    this.props.loadStocks();
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -39,6 +43,8 @@ class App extends Component {
 
 App.propTypes = {
   classes: PropTypes.object.isRequired,
+  loadStocks: PropTypes.func.isRequired,
+  loadPrices: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(App);

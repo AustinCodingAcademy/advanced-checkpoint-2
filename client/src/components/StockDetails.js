@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import numeral from "numeral";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 // import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 // import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+// import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
 
 const styles = {
   card: {
@@ -37,18 +42,26 @@ function StockDetails(props) {
           <Typography className={classes.title} color="textSecondary">
             {stock.companyName} | {stock.sector}
           </Typography>
-          <table>
-            <tbody>
-              <tr>
-                <td>Ann Dividend</td>
-                <td>{stock.annualDividend}</td>
-              </tr>
-              <tr>
-                <td>Yield</td>
-                <td>{stock.annualDividend / stock.price * 100}</td>
-              </tr>
-            </tbody>
-          </table>
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell>Shares</TableCell>
+                <TableCell>{numeral(stock.shares).format("0.00")}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Ann Dividend / Share</TableCell>
+                <TableCell>{numeral(stock.annualDividend).format("$0.00")}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Yield</TableCell>
+                <TableCell>{numeral(stock.annualDividend / stock.price).format("0.00%")}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Ann Income</TableCell>
+                <TableCell>{numeral(stock.annualDividend * stock.shares).format("$0.00")}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </CardContent>
         {/* <CardActions>
           <Button size="small">Learn More</Button>

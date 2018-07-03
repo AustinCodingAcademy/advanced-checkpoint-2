@@ -16,5 +16,6 @@ export default {
       averageCost: 42,
       price: 42.61
     }
-  ]
+  ],
+  prices: {}
 };

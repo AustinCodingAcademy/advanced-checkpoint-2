@@ -32,8 +32,9 @@ class CreateStock extends React.Component {
     ticker: "",
     companyName: "",
     sector: "",
-    annualDividend: "",
+    shares: "",
     averageCost: "",
+    annualDividend: "",
   };
 
   sectors = [
@@ -86,9 +87,11 @@ class CreateStock extends React.Component {
   };
 
   clickHandler = () => {
-    console.log("click", this.state, this);
     if (this.props.createStock) {
       this.props.createStock(this.state);
+    }
+    if (this.props.loadStocks) {
+      this.props.loadStocks();
     }
   };
 
@@ -147,6 +150,19 @@ class CreateStock extends React.Component {
               ))}
             </TextField>
             <TextField
+              id="shares"
+              label="Shares"
+              value={this.state.shares}
+              onChange={this.handleChange("shares")}
+              type="number"
+              className={classes.textField}
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+              margin="normal"
+            />
+            <TextField
               id="averageCost"
               label="Avg Cost Per Share"
               value={this.state.averageCost}
@@ -201,7 +217,8 @@ class CreateStock extends React.Component {
 
 CreateStock.propTypes = {
   classes: PropTypes.object.isRequired,
-  createStock: PropTypes.func
+  createStock: PropTypes.func,
+  loadStocks: PropTypes.func
 };
 
 export default withStyles(styles)(CreateStock);

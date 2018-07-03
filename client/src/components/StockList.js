@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+import numeral from "numeral";
 import { withStyles } from "@material-ui/core/styles";
 import {
   List,
@@ -25,6 +25,7 @@ const styles = (theme) => ({
     position: "absolute",
     bottom: theme.spacing.unit * 2,
     right: theme.spacing.unit * 2,
+    zIndex: 100
   },
   price: {
     marginRight: 30,
@@ -37,7 +38,7 @@ function StockList(props) {
     return (
       <ListItem button key={i} component={Link} to={"/details/" + s.ticker}>
         <ListItemText primary={s.ticker} secondary={s.companyName} />
-        <div className={classes.price}>{s.price}</div>
+        <div className={classes.price}>{numeral(props.prices[s.ticker]).format("0,0.00")}</div>
         <ListItemSecondaryAction>
           <IconButton
             aria-label="Delete"
@@ -72,6 +73,7 @@ function StockList(props) {
 
 StockList.propTypes = {
   stocks: PropTypes.array.isRequired,
+  prices: PropTypes.object,
   classes: PropTypes.object.isRequired,
 };
 

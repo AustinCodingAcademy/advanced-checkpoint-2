@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CreateStock from "../components/CreateStock";
-import { createStock } from "../actions";
+import { createStock, loadStocks } from "../actions";
 
 // function mapStateToProps(state) {
 //   return {
@@ -13,6 +13,9 @@ function mapDispatchToProps(dispatch) {
     createStock(stock) {
       dispatch(createStock(stock));
     },
+    loadStocks() {
+      dispatch(loadStocks());
+    }
   };
 }
 

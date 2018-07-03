@@ -17,6 +17,9 @@ const schema = new mongoose.Schema({
     required: false,
     type: String,
   },
+  shares: {
+    type: Number,
+  },
   averageCost: {
     type: Number,
   },
