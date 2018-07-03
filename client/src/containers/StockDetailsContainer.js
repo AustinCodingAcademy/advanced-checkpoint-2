@@ -3,7 +3,8 @@ import StockDetails from "../components/StockDetails";
 
 function mapStateToProps(state) {
   return {
-    stocks: state.stocks
+    stocks: state.stocks,
+    prices: state.prices
   };
 }
 

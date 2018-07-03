@@ -4,6 +4,7 @@ import numeral from "numeral";
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
@@ -17,10 +18,14 @@ import IexAttribution from "./IexAttribution";
 
 const styles = {
   root: {
-    width: "50%"
+    width: "50%",
   },
   card: {
     // minWidth: 275,
+  },
+  cardHeader: {
+    display: "flex",
+    justifyContent: "center",
   },
   cardActions: {
     justifyContent: "center",
@@ -42,17 +47,22 @@ function StockDetails(props) {
   const stock = props.stocks.find(
     (s) => s.ticker === props.match.params.ticker
   );
+  const price = props.prices[stock.ticker].quote.latestPrice;
   const { classes } = props;
   return (
     <div className={classes.root}>
       <Card className={classes.card}>
+        <CardHeader
+          avatar={""}
+          action={
+            <Typography variant="headline" component="h2">
+              {price}
+            </Typography>
+          }
+          title={stock.ticker}
+          subheader={stock.companyName + " | " + stock.sector}
+        />
         <CardContent>
-          <Typography variant="headline" component="h2">
-            {stock.ticker} {stock.price}
-          </Typography>
-          <Typography className={classes.title} color="textSecondary">
-            {stock.companyName} | {stock.sector}
-          </Typography>
           <Table>
             <TableBody>
               <TableRow>
@@ -68,7 +78,7 @@ function StockDetails(props) {
               <TableRow>
                 <TableCell>Yield</TableCell>
                 <TableCell>
-                  {numeral(stock.annualDividend / stock.price).format("0.00%")}
+                  {numeral(stock.annualDividend / price).format("0.00%")}
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -97,7 +107,7 @@ function StockDetails(props) {
             component={Link}
             to={"/"}
           >
-            Cancel
+            Back
           </Button>
         </CardActions>
       </Card>
@@ -107,6 +117,7 @@ function StockDetails(props) {
 
 StockDetails.propTypes = {
   stocks: PropTypes.array.isRequired,
+  prices: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
   match: PropTypes.object.isRequired,
 };

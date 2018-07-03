@@ -3,6 +3,13 @@ import "./App.css";
 import { connect } from "react-redux";
 import { loadStocks, loadPrices } from "./actions";
 
+function mapStateToProps(state) {
+  return {
+    stocks: state.stocks,
+    prices: state.prices,
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     loadStocks() {
@@ -10,8 +17,11 @@ function mapDispatchToProps(dispatch) {
     },
     loadPrices(tickers) {
       dispatch(loadPrices(tickers));
-    }
+    },
   };
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

@@ -94,18 +94,13 @@ export function loadPrices(tickers) {
       type: "LOAD_PRICES",
     });
     const symbols = tickers.join(",");
-    fetch(
-      `https://api.iextrading.com/1.0/stock/market/batch?symbols=${symbols}&types=quote&filter=latestPrice`
-    )
+    const uri = `https://api.iextrading.com/1.0/stock/market/batch?symbols=${symbols}&types=quote&filter=latestPrice,change,changePercent`;
+    fetch(uri)
       .then((response) => {
         return response.json();
       })
       .then((prices) => {
-        const priceMap = {};
-        Object.keys(prices).forEach((ticker) => {
-          priceMap[ticker] = prices[ticker].quote.latestPrice;
-        });
-        dispatch(pricesLoaded(priceMap));
+        dispatch(pricesLoaded(prices));
       });
   };
 }

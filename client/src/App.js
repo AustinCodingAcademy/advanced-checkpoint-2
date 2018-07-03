@@ -27,6 +27,10 @@ class App extends Component {
 
   componentDidMount() {
     this.props.loadStocks();
+    // update prices every 15s
+    setInterval(() => {
+      this.props.loadPrices(this.props.stocks.map((s) => s.ticker));
+    }, 15000);
   }
 
   render() {
@@ -50,6 +54,8 @@ App.propTypes = {
   classes: PropTypes.object.isRequired,
   loadStocks: PropTypes.func.isRequired,
   loadPrices: PropTypes.func.isRequired,
+  stocks: PropTypes.array.isRequired,
+  prices: PropTypes.object
 };
 
 export default withStyles(styles)(App);
