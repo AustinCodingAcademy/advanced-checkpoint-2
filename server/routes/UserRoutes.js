@@ -6,7 +6,7 @@ const {list,show,create,update,remove} = require( "../controllers/UserController
 router.get("/users", list);
 router.get("/users/:id", show);
 router.post("/users", create);
-router.put("/users/:id", update);
+// router.put("/users/:id", update);
 router.delete("/users/:id", remove);
 
 module.exports = router;

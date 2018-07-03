@@ -21,7 +21,7 @@ export function fetchUsers() {
   export function createUser(user) {
     return function (dispatch) {
           
-      fetch("http://localhost:4000/users", {
+      fetch("http://localhost:3001/users ", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -41,7 +41,7 @@ export function fetchUsers() {
   export function deleteUser(id) {
     return function (dispatch) {
           
-      fetch(`http://localhost:4000/users/${id}`, {
+      fetch(`http://localhost:3001/users/${id}`, {
         method: "DELETE"
       }
    )

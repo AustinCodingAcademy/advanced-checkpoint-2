@@ -6,13 +6,13 @@ class CreateUser extends Component {
         super();
         this.state = {
           
-          User: {
+          
             firstName: "",
             lastName: "",
             birthday: "",
             phone: "",
             state: ""
-          },
+          
           
         };
       }
@@ -26,46 +26,46 @@ class CreateUser extends Component {
           <form onSubmit={(e) => {
             e.preventDefault();
             if (this.props.createUser) {
-              this.props.createUser(this.state.user);
+              this.props.createUser(this.state);
             }
           }}>
             <div>
               First Name: <input onChange={(e) => {
-                const User = {name: e.target.value};
+          
                 this.setState({
-                  User: Object.assign(this.state.user,user)
+                  firstName: e.target.value
                 });
               }} />
             </div>
             <div>
               Last Name: <input onChange={(e) => {
-                const User = {occupation: e.target.value};
+             
                 this.setState({
-                  User: Object.assign(this.state.user,user)
+                  lastName: e.target.value
                 });
               }} />
             </div>
             <div>
               Birthday: <input onChange={(e) => {
-                const User = {avatar: e.target.value};
+          
                 this.setState({
-                  User: Object.assign(this.state.user,user)
+                  birthday: e.target.value
                 });
               }} />
             </div>
             <div>
               Phone: <input onChange={(e) => {
-                const User = {avatar: e.target.value};
+              
                 this.setState({
-                  User: Object.assign(this.state.user,user)
+                  phone: e.target.value
                 });
               }} />
             </div>
             <div>
               State: <input onChange={(e) => {
-                const User = {avatar: e.target.value};
+              
                 this.setState({
-                  User: Object.assign(this.state.user,user)
+                  state: e.target.value
                 });
               }} />
             </div>
@@ -76,4 +76,4 @@ class CreateUser extends Component {
     }
 }
 
-export default CreateUser
+export default CreateUser;
