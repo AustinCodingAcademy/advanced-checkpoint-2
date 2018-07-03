@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
-import {BrowserRouter,Route,Switch} from "react-router-dom";
-import Users from "./components/Users";
+import {BrowserRouter,Route,Switch,Link} from "react-router-dom";
 import CreateUserContainer from "./containers/CreateUserContainer";
-import UserDetail from "./components/UserDetail";
+
+import UsersContainer from "./containers/UsersContainer";
+import UserDetailContainer from "./containers/UserDetailContainer";
  
 
 class App extends Component {
-  constructor() {
-    super();
-  }
+  
   componentDidMount() {
     this.props.fetchUsers();
   }
@@ -17,8 +16,26 @@ class App extends Component {
     return (
       <div>
         Client
-        <CreateUserContainer />
         
+        
+        <BrowserRouter>
+        <div>
+        <p>
+        <Link to="/users"> List of Users</Link>
+        <Link to="/create">Create New User</Link>
+        </p>
+
+        <Switch>
+            
+        
+            <Route path="/users" component={UsersContainer} />
+            <Route path="/create" component={CreateUserContainer} />
+            <Route path="/user/:id" component={UserDetailContainer} />
+            
+            
+         </Switch>
+         </div>
+        </BrowserRouter>
       </div>
     );
   }

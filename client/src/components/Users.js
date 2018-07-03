@@ -6,7 +6,7 @@ function Users(props) {
     return (
       <div key={i}>
         {user.firstName} - {user.lastName} - {user.state}
-        <Link to={"/user/" + user.id}> View</Link>
+       <Link to={"/user/" + user.id}> View</Link>
         <button>Delete</button>
       </div>);
   });
