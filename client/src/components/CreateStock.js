@@ -32,9 +32,9 @@ class CreateStock extends React.Component {
     ticker: "",
     companyName: "",
     sector: "",
-    shares: "",
-    averageCost: "",
-    annualDividend: "",
+    shares: 0,
+    averageCost: 0,
+    annualDividend: 0,
   };
 
   sectors = [
@@ -95,6 +95,15 @@ class CreateStock extends React.Component {
     }
   };
 
+  componentDidMount() {
+    const stock = this.props.stocks.find(
+      (s) => s.ticker === this.props.match.params.ticker
+    );
+    if (this.props.edit) {
+      this.setState(stock);
+    }
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -110,6 +119,7 @@ class CreateStock extends React.Component {
               className={classes.textField}
               fullWidth
               label="Ticker"
+              value={this.state.ticker}
               onChange={this.handleChange("ticker")}
               InputLabelProps={{
                 shrink: true,
@@ -119,6 +129,7 @@ class CreateStock extends React.Component {
               className={classes.textField}
               fullWidth
               label="Company Name"
+              value={this.state.companyName}
               onChange={this.handleChange("companyName")}
               InputLabelProps={{
                 shrink: true,
@@ -218,7 +229,10 @@ class CreateStock extends React.Component {
 CreateStock.propTypes = {
   classes: PropTypes.object.isRequired,
   createStock: PropTypes.func,
-  loadStocks: PropTypes.func
+  loadStocks: PropTypes.func,
+  stocks: PropTypes.array,
+  match: PropTypes.object,
+  edit: PropTypes.bool
 };
 
 export default withStyles(styles)(CreateStock);

@@ -2,11 +2,11 @@ import { connect } from "react-redux";
 import CreateStock from "../components/CreateStock";
 import { createStock, loadStocks } from "../actions";
 
-// function mapStateToProps(state) {
-//   return {
-//     stocks: state.stocks
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    stocks: state.stocks
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -20,6 +20,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(CreateStock);

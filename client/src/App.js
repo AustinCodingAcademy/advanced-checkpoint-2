@@ -16,11 +16,15 @@ const styles = () => ({
   },
 });
 
+const EditStock = (props) => {
+  return <CreateStock edit {...props} />;
+};
+
 class App extends Component {
   constructor() {
     super();
   }
-  
+
   componentDidMount() {
     this.props.loadStocks();
   }
@@ -33,6 +37,7 @@ class App extends Component {
           <Switch>
             <Route path="/details/:ticker" component={StockDetails} />
             <Route path="/create" component={CreateStock} />
+            <Route path="/edit/:ticker" component={EditStock} />
             <Route path="/" component={StockList} />
           </Switch>
         </BrowserRouter>
