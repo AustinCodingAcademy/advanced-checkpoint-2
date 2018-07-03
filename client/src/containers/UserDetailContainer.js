@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import UserDetail from "../components/Users";
+import UserDetail from "../components/UserDetail";
 
 const mapStateToProps = state => ({ users: state.users });
 
