@@ -41,6 +41,10 @@ const styles = {
   pos: {
     marginBottom: 12,
   },
+  price: {
+    marginTop: 10,
+    marginRight: 20
+  }
 };
 
 function StockDetails(props) {
@@ -55,7 +59,7 @@ function StockDetails(props) {
         <CardHeader
           avatar={""}
           action={
-            <Typography variant="headline" component="h2">
+            <Typography variant="headline" component="h2" className={classes.price}>
               {price}
             </Typography>
           }

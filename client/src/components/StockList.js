@@ -25,18 +25,27 @@ const styles = (theme) => ({
     position: "relative",
     minHeight: 200,
   },
+  arrow: {
+    marginTop: 0,
+  },
   fab: {
     position: "absolute",
     bottom: theme.spacing.unit * 2,
     right: theme.spacing.unit * 2,
     zIndex: 100,
   },
+  price: {
+    marginBottom: 0,
+  },
   priceUp: {
+    display: "flex",
     alignItems: "center",
     marginRight: 30,
     color: "green",
   },
   priceDown: {
+    display: "flex",
+    alignItems: "center",
     marginRight: 30,
     color: "red",
   },
@@ -53,12 +62,24 @@ function StockList(props) {
     const { latestPrice, change, changePercent } = quote;
     return (
       <ListItem button key={i} component={Link} to={"/details/" + s.ticker}>
-        <ListItemText primary={s.ticker} secondary={s.companyName + " | " + s.shares + " shares"} />
+        <ListItemText
+          primary={s.ticker}
+          secondary={s.companyName + " | " + s.shares + " shares"}
+        />
         <div className={change < 0 ? classes.priceDown : classes.priceUp}>
-          {change < 0 ? <ArrowDropDown /> : <ArrowDropUp />}
-          {numeral(latestPrice).format("0,0.00")}{" "}
-          {numeral(change).format("0,0.00")}{" "}
-          ({numeral(changePercent).format("0.00%")})
+          <div>
+            {change < 0 ? (
+              <ArrowDropDown className={classes.arrow} />
+            ) : (
+              <ArrowDropUp className={classes.arrow} />
+            )}
+          </div>
+          <div className={classes.price}>
+            {numeral(latestPrice).format("0,0.00")}{" "}
+            {numeral(change).format("0,0.00")} ({numeral(changePercent).format(
+              "0.00%"
+            )})
+          </div>
         </div>
         <ListItemSecondaryAction>
           <IconButton
