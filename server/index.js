@@ -6,7 +6,7 @@ const cors = require('cors')
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://nhbs:Nhbs7178@ds121331.mlab.com:21331/checkpoint2");
+mongoose.createConnection("mongodb://nhbs:Nhbs7178@ds121331.mlab.com:21331/checkpoint2");
 
 const app = express();
 app.use(cors())
