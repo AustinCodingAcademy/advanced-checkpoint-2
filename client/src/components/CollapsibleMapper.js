@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {deleteVehicle} from "../actions";
 
 class CollapsibleMapper extends Component {
   constructor() {
@@ -22,7 +23,7 @@ class CollapsibleMapper extends Component {
             {d[this.props.field1]} 
             {d[this.props.field2]} 
             <Link to={"/vehicle/" + d._id}>View</Link>
-            <button>Delete</button>
+            <button onClick={deleteVehicle}>Remove</button>
           </div>
         );
       });

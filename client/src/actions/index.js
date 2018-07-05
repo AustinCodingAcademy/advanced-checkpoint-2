@@ -50,7 +50,7 @@ export function deleteVehicle(id) {
     dispatch({
       type: "REMOVE_VEHICLE"
     })
-    fetch(`http://localhost:3101/vehicle/${id}`, {
+    fetch(`http://localhost:3101/vehicles/${id}`, {
       method: "DELETE",
     }).then(() => dispatch(vehiclesLoaded()));
   };
