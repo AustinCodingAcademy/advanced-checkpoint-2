@@ -15,7 +15,6 @@ class App extends Component {
     this.props.getVehicles();
     this.props.getVehicle();
     this.props.createVehicle();
-    this.props.deleteVehicle();
   }
   render() {
     return (

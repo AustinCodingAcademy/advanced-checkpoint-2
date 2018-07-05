@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 class CollapsibleMapper extends Component {
   constructor() {
     super();
-    this.state = {visible: true};
+    this.state = {
+      visible: true
+    };
   }
+
+
   render() {
     let buttonText = "Hide";
     let userDivs = "";
@@ -17,8 +21,8 @@ class CollapsibleMapper extends Component {
             {d[this.props.field]}
             {d[this.props.field1]} 
             {d[this.props.field2]} 
-            <Link to={"/vehicle/" + d._id}> View </Link>
-            <Link to={"/vehicle/" + d._id}> Delete </Link>
+            <Link to={"/vehicle/" + d._id}>View</Link>
+            <button>Delete</button>
           </div>
         );
       });

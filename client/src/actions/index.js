@@ -52,13 +52,6 @@ export function deleteVehicle(id) {
     })
     fetch(`http://localhost:3101/vehicle/${id}`, {
       method: "DELETE",
-      headers: {"Content-Type": "application/json"},
-    }).then(() => dispatch(vehicleDeleted()));
-  };
-}
-function vehicleDeleted(vehicle) {
-  return {
-    type: "VEHICLE_REMOVED",
-    value: vehicle
+    }).then(() => dispatch(vehiclesLoaded()));
   };
 }

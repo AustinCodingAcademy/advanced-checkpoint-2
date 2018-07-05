@@ -6,6 +6,6 @@ router.get("/vehicles", list);
 router.get("/vehicle/:id", show);
 router.post("/vehicles", create);
 router.put("/vehicle/:id", update);
-router.delete("vehicle/:id", remove);
+router.delete("vehicles/:id", remove);
 
 module.exports = router;
