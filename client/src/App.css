@@ -1,24 +1,118 @@
-.App {
-  text-align: center;
+body {
+  font-family: sans-serif;
+  background-color: hsl(0, 0%, 97%);
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(0, 0%, 80%);
   padding: 20px;
-  color: white;
+}
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav a {
+  text-decoration: none;
+  background-color: hsl(0, 0%, 40%);
+  display: inline-block;
+  color: hsl(0, 0%, 100%);
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1;
+  margin: 5px;
+}
+.nav a:hover {
+  background-color: hsl(0, 0%, 30%);
+}
+.nav a.current {
+  background-color: hsl(0, 0%, 20%);
 }
 
-.App-intro {
-  font-size: large;
+.robotDiv {
+  box-shadow: 0 4px 10px 0 hsl(0, 0%, 90%);
+  background-color: hsl(0, 0%, 100%);
+  margin: 1%;
+  margin-bottom: 4%;
+  font-size: 14px;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.robotInner--listView {
+  padding: 0 10px 12px;
+}
+.robotInner--listView p {
+  margin: 0;
+}
+.robotContainer {
+  padding: 1%;
+}
+@media (min-width: 900px) {
+  .robotContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+  }
+  .robotDiv {
+    width: 31.333%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+  }
+  .robotTableDiv {
+    flex: 1 0 auto;
+  }
+}
+.robotName {
+  font-size: 24px;
+  margin: 0;
+  padding: 12px 10px 8px;
+}
+.robotTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.createRobotTable {
+  width: auto;
+}
+.robotTable td {
+  padding: 7px;
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+  vertical-align: top;
+}
+.robotTable tr td:first-child {
+  font-weight: bold;
+  text-align: right;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 40%);
+}
+.robotActions {
+  padding: 8px;
+  background-color: hsl(0, 0%, 98%);
+  display: flex;
+  justify-content: space-between;
+}
+.robotBtn {
+  display: inline-block;
+  padding: 0 8px;
+  text-decoration: none;
+  color: MediumBlue;
+}
+.robotBtn:hover {
+  color: DodgerBlue;
+}
+.robotBtnDelete {
+  font-size: 14px;
+  color: DarkRed;
+}
+.robotBtnDelete:hover {
+  color: Crimson;
 }
