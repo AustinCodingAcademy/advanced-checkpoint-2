@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import ListOfGarmentsContainer from "./containers/ListOfGarmentsContainer";
+import CreateGarmentContainer from "./containers/CreateGarmentContainer";
 
 class App extends Component {
   constructor() {
@@ -10,7 +12,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        Client
+        <ListOfGarmentsContainer />
+        <CreateGarmentContainer />
       </div>
     );
   }
