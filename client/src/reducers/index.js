@@ -1,11 +1,20 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
+function ipads(state = [], action) {
+  if (action.type === "IPADS_LOADED") {
+    return action.value;
+  }
+  return state;
+}
+function ipad(state = {}, action){
+  if(action.type === "GET_IPAD_DONE") {
+    return action.value;
+  }
   return state;
 }
 
 
 const rootReducer = combineReducers({
-  someThing
+  ipads, ipad
 });
 export default rootReducer;
