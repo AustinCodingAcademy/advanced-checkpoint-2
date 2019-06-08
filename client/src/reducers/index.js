@@ -1,11 +1,25 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
+function vehicles(state = [], action) {
+  if (action.type === "VEHICLES_LOADED") {
+    return action.value;
+  }
+  return state;
+}
+
+function vehicle(state = {}, action) {
+  if (action.type === "GET_VEHICLE_DONE") {
+    return action.value;
+  }
+  if (action.type === "VEHICLE_REMOVED") {
+    return action.value;
+  }
   return state;
 }
 
 
+
 const rootReducer = combineReducers({
-  someThing
+  vehicles, vehicle
 });
 export default rootReducer;
