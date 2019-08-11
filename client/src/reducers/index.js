@@ -1,11 +1,21 @@
-import {combineReducers} from "redux";
+import { combineReducers } from 'redux';
 
-function someThing(state = "") { 
+function users(state = [], action) {
+  if (action.type === 'USER_LOADED') {
+    return action.value;
+  }
   return state;
 }
 
+function user(state = [], action) {
+  if (action.type === 'GET_USER_DONE') {
+    return action.value;
+  }
+  return state;
+}
 
 const rootReducer = combineReducers({
-  someThing
+  users,
+  user
 });
 export default rootReducer;
