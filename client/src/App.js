@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import ListOfGamesContainer from "./containers/ListOfGamesContainer";
+import CreateGameContainer from "./containers/CreateGameContainer";
 
 class App extends Component {
   constructor() {
@@ -10,11 +12,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        Client
+        <ListOfGamesContainer />
+        <CreateGameContainer />
       </div>
     );
   }
 }
 export default (App);
-
-
