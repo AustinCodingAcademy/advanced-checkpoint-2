@@ -1,7 +1,7 @@
-import App from "./App";
-import "./App.css";
+import Main from "../components/Main";
 import { connect } from "react-redux";
-import {loadCourses} from "./actions";
+import {loadCourses} from "../actions";
+
 
 
 function mapDispatchToProps(dispatch) {
@@ -12,4 +12,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null,mapDispatchToProps)(App);
+export default connect(null,mapDispatchToProps)(Main);
