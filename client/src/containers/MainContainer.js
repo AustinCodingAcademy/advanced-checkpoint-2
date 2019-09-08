@@ -1,7 +1,8 @@
-import App from "./App";
-import "./App.css";
+import Main from "../components/Main";
 import { connect } from "react-redux";
-import {loadQuestions} from "./actions";
+import {loadQuestions} from "../actions";
+
+
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -11,4 +12,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null,mapDispatchToProps)(App);
+export default connect(null,mapDispatchToProps)(Main);
